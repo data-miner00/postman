@@ -12,7 +12,12 @@ The `environments` folder will contain all the essential environments for develo
 
 The following are the screenshots of my Postman client that demonstrates the application of the good practises that makes the whole workspace clean and delightful to work with.
 
+The environments are configured properly as shown.
+
 ![Postman screenshot for environments](/images/postman_envs0.png)
+
+Simple crud with variables applied as shown below.
+
 ![Postman screenshot for collections](/images/postman_collection.png)
 
 ## API Development
@@ -23,3 +28,5 @@ The list of useful resource that is helpful for API development workflow.
 | ----------------------------------------------------------------------------------- | ---------------------------------------------------- |
 | [Jsonplaceholder](https://jsonplaceholder.typicode.com/)                            | Fake rest API for quick mockups                      |
 | [Postman Learning](https://learning.postman.com/docs/getting-started/introduction/) | Full learning resource/docs for dealing with Postman |
+| [RapidAPI](https://rapidapi.com/)                                                   | World largest API hub                                |
+| [Free API List](https://apipheny.io/free-api/)                                      | List of totally free API for use                     |
