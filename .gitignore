@@ -3,3 +3,6 @@ temp
 
 # Secret file containing API keys
 secrets.crt
+
+# Dist folder
+dist
