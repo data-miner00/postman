@@ -17,7 +17,7 @@ else
     echo Already at root folder.
 fi
 
-# cp -r ./collections ./dist
+cp -fr ./collections ./dist
 
 declare -A api_keys
 
@@ -26,7 +26,7 @@ IFS='='
 function read_secrets_from_file() {
     raw_secret="secrets.crt"
 
-    if [ -e "$raw_secret" ] then echo "File does not exist"; exit 1; fi
+    # if [ -e "$raw_secret" ]; then echo "File does not exist"; exit 1; fi
 
     while read line; do
         echo $line
@@ -41,8 +41,15 @@ read_secrets_from_file
 
 unset IFS
 
+function replace_variables_with_value() {
+    sed -i "s/<<$1>>/$2/g" dist/**/*.postman_collection.json
+}
+
 for KEY in "${!api_keys[@]}"; do
     echo "Key: $KEY"
     echo "Value: ${api_keys[$KEY]}"
+
+    replace_variables_with_value $KEY ${api_keys[$KEY]}
 done
 
+echo Done!
