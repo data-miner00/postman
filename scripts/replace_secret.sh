@@ -17,7 +17,7 @@ else
     echo Already at root folder.
 fi
 
-cp -fr ./collections ./dist
+cp -fr ./environments ./dist
 
 declare -A api_keys
 
@@ -31,8 +31,10 @@ function read_secrets_from_file() {
     while read line; do
         echo $line
         read -a keyValuePair <<< "$line"
-        api_key_name=${keyValuePair[0]}
-        api_key_value=${keyValuePair[1]}
+        api_key_name="${keyValuePair[0]##*( \n\t)}"
+        api_key_value="${keyValuePair[1]##*( \n\t)}"
+        api_key_name="${api_key_name%%*( \n\t)}"
+        api_key_value="${api_key_value%%*( \n\t)}"
         api_keys["$api_key_name"]=$api_key_value
     done < $raw_secret
 }
@@ -42,7 +44,7 @@ read_secrets_from_file
 unset IFS
 
 function replace_variables_with_value() {
-    sed -i "s/<<$1>>/$2/g" dist/**/*.postman_collection.json
+    sed -i "s@<<$1>>@$2@g" dist/*.postman_environment.json
 }
 
 for KEY in "${!api_keys[@]}"; do
