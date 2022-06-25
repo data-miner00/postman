@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "45a35ce7-32ea-4723-ac62-019674ca15cb",
+		"name": "Coinmarketcap API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9961816"
+	},
+	"item": [
+		{
+			"name": "Cryptocurrency",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "Coinmarketcap ID Map",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-CMC_PRO_API_KEY",
+										"value": "{{cmc_apiToken}}",
+										"description": "The Coinmarketcap API token.",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept-Encoding",
+										"value": "deflate, gzip",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{cmc_baseUrl}}/v1/cryptocurrency/map",
+									"host": [
+										"{{cmc_baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"cryptocurrency",
+										"map"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
