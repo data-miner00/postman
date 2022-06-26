@@ -20,6 +20,26 @@ Simple crud with variables applied as shown below.
 
 ![Postman screenshot for collections](/images/postman_collection.png)
 
+## Importing to Postman
+
+There are a certain steps that needed to be taken before importing the files.
+
+### Environments
+
+For environments, the placeholder variables that contains sensitive data will need to be replaced with the actual value before being imported to Postman. First, copy the `secrets.crt.example` and paste it in the same directory. Rename it to `secrets.crt`. This is the file that contains the absolute value that the Postman environment will be using.
+
+After that, the environments file will need to be processed to produce the version that contains the value for the secrets or environment variable by running the following command.
+
+```
+bash scripts/replace_secret.sh
+```
+
+This will copy the contents inside the `environments` folder and replace the variable placeholder indicated by double angle bracket `<<>>`.
+
+### Collections
+
+The collections inside the `collections` folder can be imported directly. The variables are handled by Postman itself.
+
 ## API Development
 
 The list of useful resource that is helpful for API development workflow.
@@ -30,3 +50,9 @@ The list of useful resource that is helpful for API development workflow.
 | [Postman Learning](https://learning.postman.com/docs/getting-started/introduction/) | Full learning resource/docs for dealing with Postman |
 | [RapidAPI](https://rapidapi.com/)                                                   | World largest API hub                                |
 | [Free API List](https://apipheny.io/free-api/)                                      | List of totally free API for use                     |
+
+## Acknowledgements
+
+The list of references used to make this repo better.
+
+-   [Sed fails with unknown option to s error](https://stackoverflow.com/questions/9366816/sed-fails-with-unknown-option-to-s-error)
