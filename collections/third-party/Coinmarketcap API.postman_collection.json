@@ -16,24 +16,7 @@
 							"name": "Coinmarketcap ID Map",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "X-CMC_PRO_API_KEY",
-										"value": "{{cmc_apiToken}}",
-										"description": "The Coinmarketcap API token.",
-										"type": "text"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Accept-Encoding",
-										"value": "deflate, gzip",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "{{cmc_baseUrl}}/v1/cryptocurrency/map",
 									"host": [
@@ -44,13 +27,324 @@
 										"cryptocurrency",
 										"map"
 									]
+								},
+								"description": "Returns a mapping of all cryptocurrencies to unique CoinMarketCap `id`s. Per our [Best Practices](https://coinmarketcap.com/api/documentation/v1/#section/Best-Practices)  \nwe recommend utilizing CMC ID instead of cryptocurrency symbols to  \nsecurely identify cryptocurrencies with our other endpoints and in your  \nown application logic. Each cryptocurrency returned includes typical  \nidentifiers such as `name`, `symbol`, and `token_address` for flexible mapping to `id`.\n\nBy default this endpoint returns cryptocurrencies that have actively  \ntracked markets on supported exchanges. You may receive a map of all  \ninactive cryptocurrencies by passing `listing_status=inactive`.  \nYou may also receive a map of registered cryptocurrency projects that  \nare listed but do not yet meet methodology requirements to have tracked  \nmarkets via `listing_status=untracked`. Please review our [methodology documentation](https://coinmarketcap.com/methodology/) for additional details on listing states.\n\nCryptocurrencies returned include `first_historical_data` and `last_historical_data`  \ntimestamps to conveniently reference historical date ranges available  \nto query with historical time-series data endpoints. You may also use  \nthe `aux` parameter to only include properties you require to slim down the payload if calling this endpoint frequently."
+							},
+							"response": []
+						},
+						{
+							"name": "Listing Latest",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cmc_baseUrl}}/v1/cryptocurrency/listings/latest",
+									"host": [
+										"{{cmc_baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"cryptocurrency",
+										"listings",
+										"latest"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "1",
+											"description": "Optionally offset the start (1-based index) of the paginated list of items to return.",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "100",
+											"description": "Optionally specify the number of results to return. Use this parameter and the \"start\" parameter to determine your own pagination size.",
+											"disabled": true
+										},
+										{
+											"key": "price_min",
+											"value": null,
+											"description": "Optionally specify a threshold of minimum USD price to filter results by.",
+											"disabled": true
+										},
+										{
+											"key": "price_max",
+											"value": null,
+											"description": "Optionally specify a threshold of maximum USD price to filter results by.",
+											"disabled": true
+										},
+										{
+											"key": "market_cap_min",
+											"value": null,
+											"description": "Optionally specify a threshold of minimum market cap to filter results by.",
+											"disabled": true
+										},
+										{
+											"key": "market_cap_max",
+											"value": null,
+											"description": "Optionally specify a threshold of maximum market cap to filter results by.",
+											"disabled": true
+										},
+										{
+											"key": "volume_24h_min",
+											"value": null,
+											"description": "Optionally specify a threshold of minimum 24 hour USD volume to filter results by.",
+											"disabled": true
+										},
+										{
+											"key": "volume_24h_max",
+											"value": null,
+											"description": "Optionally specify a threshold of maximum 24 hour USD volume to filter results by.",
+											"disabled": true
+										},
+										{
+											"key": "circulating_supply_min",
+											"value": null,
+											"description": "Optionally specify a threshold of minimum circulating supply to filter results by.",
+											"disabled": true
+										},
+										{
+											"key": "circulating_supply_max",
+											"value": null,
+											"description": "Optionally specify a threshold of maximum circulating supply to filter results by.",
+											"disabled": true
+										},
+										{
+											"key": "percent_change_24h_min",
+											"value": null,
+											"description": "Optionally specify a threshold of minimum 24 hour percent change to filter results by.",
+											"disabled": true
+										},
+										{
+											"key": "percent_change_24h_max",
+											"value": null,
+											"description": "Optionally specify a threshold of maximum 24 hour percent change to filter results by.",
+											"disabled": true
+										},
+										{
+											"key": "convert",
+											"value": null,
+											"description": "Optionally calculate market quotes in up to 120 currencies at once by passing a comma-separated list of cryptocurrency or fiat currency symbols. Each additional convert option beyond the first requires an additional call credit. A list of supported fiat options can be found here. Each conversion is returned in its own \"quote\" object.",
+											"disabled": true
+										},
+										{
+											"key": "convert_id",
+											"value": null,
+											"description": "Optionally calculate market quotes by CoinMarketCap ID instead of symbol. This option is identical to convert outside of ID format. Ex: convert_id=1,2781 would replace convert=BTC,USD in your query. This parameter cannot be used when convert is used.",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": null,
+											"description": "What field to sort the list of cryptocurrencies by.",
+											"disabled": true
+										},
+										{
+											"key": "sort_dir",
+											"value": null,
+											"description": "The direction in which to order cryptocurrencies against the specified sort.",
+											"disabled": true
+										},
+										{
+											"key": "cryptocurrency_type",
+											"value": null,
+											"description": "The type of cryptocurrency to include.",
+											"disabled": true
+										},
+										{
+											"key": "tag",
+											"value": null,
+											"description": "The tag of cryptocurrency to include.",
+											"disabled": true
+										},
+										{
+											"key": "aux",
+											"value": null,
+											"description": "Optionally specify a comma-separated list of supplemental data fields to return. Pass num_market_pairs,cmc_rank,date_added,tags,platform,max_supply,circulating_supply,total_supply,market_cap_by_total_supply,volume_24h_reported,volume_7d,volume_7d_reported,volume_30d,volume_30d_reported,is_market_cap_included_in_calc to include all auxiliary fields.",
+											"disabled": true
+										}
+									]
 								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "v2",
+					"item": [
+						{
+							"name": "Metadata",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cmc_baseUrl}}/v2/cryptocurrency/info",
+									"host": [
+										"{{cmc_baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"cryptocurrency",
+										"info"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1,2",
+											"description": "One or more comma-separated CoinMarketCap cryptocurrency IDs. Example: \"1,2\"",
+											"disabled": true
+										},
+										{
+											"key": "slug",
+											"value": "bitcoin,ethereum",
+											"description": "Alternatively pass a comma-separated list of cryptocurrency slugs. Example: \"bitcoin,ethereum\"",
+											"disabled": true
+										},
+										{
+											"key": "symbol",
+											"value": "BTC,ETH",
+											"description": "Alternatively pass one or more comma-separated cryptocurrency symbols. Example: \"BTC,ETH\". At least one \"id\" or \"slug\" or \"symbol\" is required for this request.",
+											"disabled": true
+										},
+										{
+											"key": "address",
+											"value": "0xc40af1e4fecfa05ce6bab79dcd8b373d2e436c4e",
+											"description": "Alternatively pass in a contract address. Example: \"0xc40af1e4fecfa05ce6bab79dcd8b373d2e436c4e\"",
+											"disabled": true
+										},
+										{
+											"key": "aux",
+											"value": "urls,logo,description,tags,platform,date_added,notice",
+											"description": "Optionally specify a comma-separated list of supplemental data fields to return. Pass urls,logo,description,tags,platform,date_added,notice,status to include all auxiliary fields.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Returns all static metadata  \navailable for one or more cryptocurrencies. This information includes  \ndetails like logo, description, official website URL, social links, and  \nlinks to a cryptocurrency's technical documentation.\n\n**Please note**: This documentation relates to our  \nupdated V2 endpoint, which may be incompatible with our V1 versions.  \nDocumentation for deprecated endpoints can be found [here](https://coinmarketcap.com/api/documentation/v1/#tag/deprecated)."
+							},
+							"response": []
+						},
+						{
+							"name": "Quotes Latest",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cmc_baseUrl}}/v1/cryptocurrency/quotes/latest?symbol=BTC,ETH&convert=myr",
+									"host": [
+										"{{cmc_baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"cryptocurrency",
+										"quotes",
+										"latest"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1,2",
+											"description": "One or more comma-separated cryptocurrency CoinMarketCap IDs. Example: 1,2",
+											"disabled": true
+										},
+										{
+											"key": "slug",
+											"value": "bitcoin,ethereum",
+											"description": "Alternatively pass a comma-separated list of cryptocurrency slugs. Example: \"bitcoin,ethereum\"",
+											"disabled": true
+										},
+										{
+											"key": "symbol",
+											"value": "BTC,ETH",
+											"description": "Alternatively pass one or more comma-separated cryptocurrency symbols. Example: \"BTC,ETH\". At least one \"id\" or \"slug\" or \"symbol\" is required for this request."
+										},
+										{
+											"key": "convert",
+											"value": "myr",
+											"description": "Optionally calculate market quotes in up to 120 currencies at once by passing a comma-separated list of cryptocurrency or fiat currency symbols. Each additional convert option beyond the first requires an additional call credit. A list of supported fiat options can be found here. Each conversion is returned in its own \"quote\" object."
+										},
+										{
+											"key": "convert_id",
+											"value": "",
+											"description": "Optionally calculate market quotes by CoinMarketCap ID instead of symbol. This option is identical to convert outside of ID format. Ex: convert_id=1,2781 would replace convert=BTC,USD in your query. This parameter cannot be used when convert is used.",
+											"disabled": true
+										},
+										{
+											"key": "aux",
+											"value": "num_market_pairs,cmc_rank,date_added,tags,platform,max_supply,circulating_supply,total_supply,is_active,is_fiat",
+											"description": "Optionally specify a comma-separated list of supplemental data fields to return. Pass `num_market_pairs,cmc_rank,date_added,tags,platform,max_supply,circulating_supply,total_supply,market_cap_by_total_supply,volume_24h_reported,volume_7d,volume_7d_reported,volume_30d,volume_30d_reported,is_active,is_fiat` to include all auxiliary fields.",
+											"disabled": true
+										},
+										{
+											"key": "skip_invalid",
+											"value": "",
+											"description": "Pass true to relax request validation rules. When requesting records on multiple cryptocurrencies an error is returned if no match is found for 1 or more requested cryptocurrencies. If set to true, invalid lookups will be skipped allowing valid cryptocurrencies to still be returned.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Returns the latest market quote for 1 or more cryptocurrencies. Use the \"convert\" option to return market values in multiple fiat and cryptocurrency conversions in the same call."
 							},
 							"response": []
 						}
 					]
 				}
 			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{cmc_apiToken}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "X-CMC_PRO_API_KEY",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var acceptHeader = pm.variables.get(\"accept\");",
+					"var acceptEncodingHeader = pm.variables.get(\"accept-encoding\")",
+					"",
+					"pm.request.addHeader({",
+					"    \"Accept\": acceptHeader,",
+					"    \"Accept-Encoding\": acceptEncodingHeader,",
+					"});",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "accept",
+			"value": "application/json",
+			"type": "string"
+		},
+		{
+			"key": "accept-encoding",
+			"value": "deflate, gzip",
+			"type": "string"
 		}
 	]
 }
