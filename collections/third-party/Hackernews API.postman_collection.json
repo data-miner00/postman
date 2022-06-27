@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "63014949-a891-464b-a429-b79934c21c2d",
 		"name": "Hackernews API",
+		"description": "The collection for the official [Hackernews API](https://hackernews.api-docs.io/v0/overview/introduction). Contains a total of 8 requests that is allowed to fetch. No authentication is required.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "9961816"
 	},
@@ -19,7 +20,8 @@
 					"path": [
 						"<<item-id>>.json"
 					]
-				}
+				},
+				"description": "Stories, comments, jobs, Ask HNs and even polls are just items. They're identified by their ids, which are unique integers, and live under [https://hacker-news.firebaseio.com/v0/item/{item-id}](https://hacker-news.firebaseio.com/v0/item/{item-id})\n\nStory: [https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty](https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty)"
 			},
 			"response": []
 		},
@@ -37,7 +39,8 @@
 						"user",
 						"<<user-id>>.json"
 					]
-				}
+				},
+				"description": "Users are identified by case-sensitive ids, and live under [https://hacker-news.firebaseio.com/v0/user/{user-id}](https://hacker-news.firebaseio.com/v0/user/{user-id}). Only users that have public activity (comments or story submissions) on the site are available through the API."
 			},
 			"response": []
 		},
@@ -54,7 +57,8 @@
 					"path": [
 						"maxitem.json"
 					]
-				}
+				},
+				"description": "The current largest item id is at [https://hacker-news.firebaseio.com/v0/maxitem](https://hacker-news.firebaseio.com/v0/maxitem). You can walk backward from here to discover all items."
 			},
 			"response": []
 		},
@@ -71,7 +75,8 @@
 					"path": [
 						"askstories.json"
 					]
-				}
+				},
+				"description": "Up to 500 top and new stories are at [https://hacker-news.firebaseio.com/v0/topstories](https://hacker-news.firebaseio.com/v0/topstories) and  \n[https://hacker-news.firebaseio.com/v0/newstories](https://hacker-news.firebaseio.com/v0/newstories)."
 			},
 			"response": []
 		},
@@ -88,7 +93,8 @@
 					"path": [
 						"topstories.json"
 					]
-				}
+				},
+				"description": "Up to 200 of the latest Ask HN Stories!"
 			},
 			"response": []
 		},
@@ -105,7 +111,8 @@
 					"path": [
 						"showstories.json"
 					]
-				}
+				},
+				"description": "Up to 200 of the latest Show HN Stories!"
 			},
 			"response": []
 		},
@@ -122,7 +129,8 @@
 					"path": [
 						"jobstories.json"
 					]
-				}
+				},
+				"description": "Up to 200 of the latest Job Stories!"
 			},
 			"response": []
 		},
@@ -139,7 +147,8 @@
 					"path": [
 						"updates.json"
 					]
-				}
+				},
+				"description": "The item and profile changes are at [https://hacker-news.firebaseio.com/v0/updates](https://hacker-news.firebaseio.com/v0/updates).\n\nExample: [https://hacker-news.firebaseio.com/v0/updates.json?print=pretty](https://hacker-news.firebaseio.com/v0/updates.json?print=pretty)"
 			},
 			"response": []
 		}
