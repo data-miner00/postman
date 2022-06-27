@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "63014949-a891-464b-a429-b79934c21c2d",
+		"name": "Hackernews API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9961816"
+	},
+	"item": [
+		{
+			"name": "Items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hackernews-baseUrl}}/<<item-id>>.json",
+					"host": [
+						"{{hackernews-baseUrl}}"
+					],
+					"path": [
+						"<<item-id>>.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hackernews-baseUrl}}/user/<<user-id>>.json",
+					"host": [
+						"{{hackernews-baseUrl}}"
+					],
+					"path": [
+						"user",
+						"<<user-id>>.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Max Item ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hackernews-baseUrl}}/maxitem.json",
+					"host": [
+						"{{hackernews-baseUrl}}"
+					],
+					"path": [
+						"maxitem.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ask HN Stories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hackernews-baseUrl}}/askstories.json",
+					"host": [
+						"{{hackernews-baseUrl}}"
+					],
+					"path": [
+						"askstories.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New and Top Stories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hackernews-baseUrl}}/topstories.json",
+					"host": [
+						"{{hackernews-baseUrl}}"
+					],
+					"path": [
+						"topstories.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show HN Stories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hackernews-baseUrl}}/showstories.json",
+					"host": [
+						"{{hackernews-baseUrl}}"
+					],
+					"path": [
+						"showstories.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Job HN Stories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hackernews-baseUrl}}/jobstories.json",
+					"host": [
+						"{{hackernews-baseUrl}}"
+					],
+					"path": [
+						"jobstories.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Changed Items and Profiles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hackernews-baseUrl}}/updates.json",
+					"host": [
+						"{{hackernews-baseUrl}}"
+					],
+					"path": [
+						"updates.json"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "hackernews-baseUrl",
+			"value": "https://hacker-news.firebaseio.com/v0",
+			"type": "string"
+		}
+	]
+}
