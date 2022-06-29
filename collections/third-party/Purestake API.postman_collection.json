@@ -92,7 +92,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{purestake-mainnet-baseUrl}}/idx2/v2/accounts/<<accountId>>",
+							"raw": "{{purestake-mainnet-baseUrl}}/idx2/v2/accounts/:accountId",
 							"host": [
 								"{{purestake-mainnet-baseUrl}}"
 							],
@@ -100,7 +100,7 @@
 								"idx2",
 								"v2",
 								"accounts",
-								"<<accountId>>"
+								":accountId"
 							],
 							"query": [
 								{
@@ -118,6 +118,13 @@
 									"value": null,
 									"disabled": true
 								}
+							],
+							"variable": [
+								{
+									"key": "accountId",
+									"value": null,
+									"description": "The unique address of the account."
+								}
 							]
 						},
 						"description": "Gets the details for an account by its unique address."
@@ -130,7 +137,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts/<<accountId>>/apps-local-state",
+							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts/:accountId/apps-local-state",
 							"host": [
 								"{{purestake-testnet-baseUrl}}"
 							],
@@ -138,7 +145,7 @@
 								"idx2",
 								"v2",
 								"accounts",
-								"<<accountId>>",
+								":accountId",
 								"apps-local-state"
 							],
 							"query": [
@@ -162,6 +169,13 @@
 									"value": null,
 									"disabled": true
 								}
+							],
+							"variable": [
+								{
+									"key": "accountId",
+									"value": null,
+									"description": "The unique address of the account."
+								}
 							]
 						}
 					},
@@ -173,7 +187,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts/<<accountId>>/assets",
+							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts/:accountId/assets",
 							"host": [
 								"{{purestake-testnet-baseUrl}}"
 							],
@@ -181,7 +195,7 @@
 								"idx2",
 								"v2",
 								"accounts",
-								"<<accountId>>",
+								":accountId",
 								"assets"
 							],
 							"query": [
@@ -205,6 +219,13 @@
 									"value": null,
 									"disabled": true
 								}
+							],
+							"variable": [
+								{
+									"key": "accountId",
+									"value": null,
+									"description": "The unique address of the account."
+								}
 							]
 						}
 					},
@@ -216,7 +237,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts/<<accountId>>/created-applications",
+							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts/:accountId/created-applications",
 							"host": [
 								"{{purestake-testnet-baseUrl}}"
 							],
@@ -224,7 +245,7 @@
 								"idx2",
 								"v2",
 								"accounts",
-								"<<accountId>>",
+								":accountId",
 								"created-applications"
 							],
 							"query": [
@@ -249,6 +270,13 @@
 									"value": null,
 									"disabled": true
 								}
+							],
+							"variable": [
+								{
+									"key": "accountId",
+									"value": null,
+									"description": "The unique address of the account."
+								}
 							]
 						}
 					},
@@ -260,7 +288,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts/<<accountId>>/created-assets",
+							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts/:accountId/created-assets",
 							"host": [
 								"{{purestake-testnet-baseUrl}}"
 							],
@@ -268,7 +296,7 @@
 								"idx2",
 								"v2",
 								"accounts",
-								"<<accountId>>",
+								":accountId",
 								"created-assets"
 							],
 							"query": [
@@ -292,6 +320,13 @@
 									"value": null,
 									"disabled": true
 								}
+							],
+							"variable": [
+								{
+									"key": "accountId",
+									"value": null,
+									"description": "The unique address of the account."
+								}
 							]
 						}
 					},
@@ -303,7 +338,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts/<<accountId>>/transactions",
+							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts/:accountId/transactions",
 							"host": [
 								"{{purestake-testnet-baseUrl}}"
 							],
@@ -311,7 +346,7 @@
 								"idx2",
 								"v2",
 								"accounts",
-								"<<accountId>>",
+								":accountId",
 								"transactions"
 							],
 							"query": [
@@ -390,6 +425,120 @@
 									"value": null,
 									"disabled": true
 								}
+							],
+							"variable": [
+								{
+									"key": "accountId",
+									"value": null,
+									"description": "The unique address of the account."
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Applications",
+			"item": [
+				{
+					"name": "Get Applications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/applications",
+							"host": [
+								"{{purestake-testnet-baseUrl}}"
+							],
+							"path": [
+								"idx2",
+								"v2",
+								"applications"
+							],
+							"query": [
+								{
+									"key": "creator",
+									"value": null,
+									"description": "The creator of the application.",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "application-id",
+									"value": null,
+									"description": "The ID of the application.",
+									"disabled": true
+								},
+								{
+									"key": "include-all",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "next",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Application Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/applications/:application-id",
+							"host": [
+								"{{purestake-testnet-baseUrl}}"
+							],
+							"path": [
+								"idx2",
+								"v2",
+								"applications",
+								":application-id"
+							],
+							"variable": [
+								{
+									"key": "application-id",
+									"value": null,
+									"description": "The application ID."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Application Logs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/:application-id/logs",
+							"host": [
+								"{{purestake-testnet-baseUrl}}"
+							],
+							"path": [
+								"idx2",
+								"v2",
+								":application-id",
+								"logs"
+							],
+							"variable": [
+								{
+									"key": "application-id",
+									"value": null,
+									"description": "The application ID."
+								}
 							]
 						}
 					},
@@ -403,7 +552,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/transactions/<<txid>>",
+					"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/transactions/:txid",
 					"host": [
 						"{{purestake-testnet-baseUrl}}"
 					],
@@ -411,7 +560,14 @@
 						"idx2",
 						"v2",
 						"transactions",
-						"<<txid>>"
+						":txid"
+					],
+					"variable": [
+						{
+							"key": "txid",
+							"value": null,
+							"description": "The transaction ID."
+						}
 					]
 				},
 				"description": "Gets a transaction details by ID on the Algorand network. Replace the `txid`with the actual ID.\n\nSample txid: OQRFBMMFQU5O5DFFPF7GV3FZ26EUYBQMQMDO7JFQEWNNKUJBQI4A"
