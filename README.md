@@ -50,6 +50,7 @@ The list of useful resource that is helpful for API development workflow.
 | [Postman Learning](https://learning.postman.com/docs/getting-started/introduction/) | Full learning resource/docs for dealing with Postman |
 | [RapidAPI](https://rapidapi.com/)                                                   | World largest API hub                                |
 | [Free API List](https://apipheny.io/free-api/)                                      | List of totally free API for use                     |
+| [Swagger](https://swagger.io/)                                                      | API Documentation                                    |
 
 ## Acknowledgements
 
