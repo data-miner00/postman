@@ -547,6 +547,275 @@
 			]
 		},
 		{
+			"name": "Assets",
+			"item": [
+				{
+					"name": "Get Assets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/assets",
+							"host": [
+								"{{purestake-testnet-baseUrl}}"
+							],
+							"path": [
+								"idx2",
+								"v2",
+								"assets"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "asset-id",
+									"value": null,
+									"description": "The asset ID.",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": null,
+									"description": "The name of the asset.",
+									"disabled": true
+								},
+								{
+									"key": "unit",
+									"value": null,
+									"description": "The unit of the asset.",
+									"disabled": true
+								},
+								{
+									"key": "creator",
+									"value": null,
+									"description": "The creator address of the asset.",
+									"disabled": true
+								},
+								{
+									"key": "include-all",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "next",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Asset Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/assets/:asset-id",
+							"host": [
+								"{{purestake-testnet-baseUrl}}"
+							],
+							"path": [
+								"idx2",
+								"v2",
+								"assets",
+								":asset-id"
+							],
+							"query": [
+								{
+									"key": "include-all",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "asset-id",
+									"value": "93585067",
+									"description": "The asset ID."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Asset Balances",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/assets/:asset-id/balances",
+							"host": [
+								"{{purestake-testnet-baseUrl}}"
+							],
+							"path": [
+								"idx2",
+								"v2",
+								"assets",
+								":asset-id",
+								"balances"
+							],
+							"query": [
+								{
+									"key": "currency-less-than",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "include-all",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "next",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "currency-greater-than",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "asset-id",
+									"value": "93585067",
+									"description": "The asset ID."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Asset Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/assets/:asset-id/transactions",
+							"host": [
+								"{{purestake-testnet-baseUrl}}"
+							],
+							"path": [
+								"idx2",
+								"v2",
+								"assets",
+								":asset-id",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "sig-type",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "address",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "note-prefix",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "round",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "txid",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "tx-type",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "currency-greater-than",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "address-role",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "min-round",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "exclude-close-to",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "max-round",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "rekey-to",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "before-time",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "currency-less-than",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "after-time",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "next",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "asset-id",
+									"value": null,
+									"description": "The asset ID."
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Get Transaction Details",
 			"request": {
 				"method": "GET",
