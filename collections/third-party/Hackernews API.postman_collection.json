@@ -13,12 +13,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{hackernews-baseUrl}}/<<item-id>>.json",
+					"raw": "{{hackernews-baseUrl}}/item/{{item-id}}.json",
 					"host": [
 						"{{hackernews-baseUrl}}"
 					],
 					"path": [
-						"<<item-id>>.json"
+						"item",
+						"{{item-id}}.json"
 					]
 				},
 				"description": "Stories, comments, jobs, Ask HNs and even polls are just items. They're identified by their ids, which are unique integers, and live under [https://hacker-news.firebaseio.com/v0/item/{item-id}](https://hacker-news.firebaseio.com/v0/item/{item-id})\n\nStory: [https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty](https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty)"
@@ -31,13 +32,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{hackernews-baseUrl}}/user/<<user-id>>.json",
+					"raw": "{{hackernews-baseUrl}}/user/{{user-id}}.json",
 					"host": [
 						"{{hackernews-baseUrl}}"
 					],
 					"path": [
 						"user",
-						"<<user-id>>.json"
+						"{{user-id}}.json"
 					]
 				},
 				"description": "Users are identified by case-sensitive ids, and live under [https://hacker-news.firebaseio.com/v0/user/{user-id}](https://hacker-news.firebaseio.com/v0/user/{user-id}). Only users that have public activity (comments or story submissions) on the site are available through the API."
@@ -178,6 +179,14 @@
 			"key": "hackernews-baseUrl",
 			"value": "https://hacker-news.firebaseio.com/v0",
 			"type": "string"
+		},
+		{
+			"key": "item-id",
+			"value": "<<item-id>>"
+		},
+		{
+			"key": "user-id",
+			"value": "<<user-id>>"
 		}
 	]
 }
