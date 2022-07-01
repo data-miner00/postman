@@ -816,32 +816,153 @@
 			]
 		},
 		{
-			"name": "Get Transaction Details",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/transactions/:txid",
-					"host": [
-						"{{purestake-testnet-baseUrl}}"
-					],
-					"path": [
-						"idx2",
-						"v2",
-						"transactions",
-						":txid"
-					],
-					"variable": [
-						{
-							"key": "txid",
-							"value": null,
-							"description": "The transaction ID."
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "Get Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/transactions",
+							"host": [
+								"{{purestake-testnet-baseUrl}}"
+							],
+							"path": [
+								"idx2",
+								"v2",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "sig-type",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "address",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "note-prefix",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "round",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "application-id",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "txid",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "tx-type",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "currency-greater-than",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "address-role",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "min-round",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "asset-id",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "exclude-close-to",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "max-round",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "rekey-to",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "before-time",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "currency-less-than",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "after-time",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "next",
+									"value": null,
+									"disabled": true
+								}
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"description": "Gets a transaction details by ID on the Algorand network. Replace the `txid`with the actual ID.\n\nSample txid: OQRFBMMFQU5O5DFFPF7GV3FZ26EUYBQMQMDO7JFQEWNNKUJBQI4A"
-			},
-			"response": []
+				{
+					"name": "Get Transaction Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/transactions/:txid",
+							"host": [
+								"{{purestake-testnet-baseUrl}}"
+							],
+							"path": [
+								"idx2",
+								"v2",
+								"transactions",
+								":txid"
+							],
+							"variable": [
+								{
+									"key": "txid",
+									"value": null,
+									"description": "The transaction ID."
+								}
+							]
+						},
+						"description": "Gets a transaction details by ID on the Algorand network. Replace the `txid`with the actual ID.\n\nSample txid: OQRFBMMFQU5O5DFFPF7GV3FZ26EUYBQMQMDO7JFQEWNNKUJBQI4A"
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Check for Health",
@@ -878,6 +999,33 @@
 					]
 				},
 				"description": "Retrieves all the endpoint informations that Purestake offers for Algorand."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Block",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/blocks/:round-number",
+					"host": [
+						"{{purestake-testnet-baseUrl}}"
+					],
+					"path": [
+						"idx2",
+						"v2",
+						"blocks",
+						":round-number"
+					],
+					"variable": [
+						{
+							"key": "round-number",
+							"value": "123456",
+							"description": "The round number of the block."
+						}
+					]
+				}
 			},
 			"response": []
 		}
