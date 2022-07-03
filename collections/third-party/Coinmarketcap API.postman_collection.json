@@ -291,6 +291,117 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Exchange",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "Metadata",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cmc_baseUrl}}/v1/exchange/info?slug=binance",
+									"host": [
+										"{{cmc_baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"exchange",
+										"info"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "",
+											"description": "One or more comma-separated CoinMarketCap cryptocurrency exchange ids. Example: \"1,2\"",
+											"disabled": true
+										},
+										{
+											"key": "slug",
+											"value": "binance",
+											"description": "Alternatively, one or more comma-separated exchange names in URL friendly shorthand \"slug\" format (all lowercase, spaces replaced with hyphens). Example: \"binance,gdax\". At least one \"id\" or \"slug\" is required."
+										},
+										{
+											"key": "aux",
+											"value": null,
+											"description": "Optionally specify a comma-separated list of supplemental data fields to return. Pass `urls,logo,description,date_launched,notice,status` to include all auxiliary fields.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Exchange Map",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cmc_baseUrl}}/v1/exchange/map",
+									"host": [
+										"{{cmc_baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"exchange",
+										"map"
+									],
+									"query": [
+										{
+											"key": "listing_status",
+											"value": null,
+											"description": "Only active exchanges are returned by default. Pass `inactive` to get a list of exchanges that are no longer active. Pass `untracked` to get a list of exchanges that are registered but do not currently meet methodology requirements to have active markets tracked. You may pass one or more comma-separated values.",
+											"disabled": true
+										},
+										{
+											"key": "slug",
+											"value": null,
+											"description": "Optionally pass a comma-separated list of exchange slugs (lowercase URL friendly shorthand name with spaces replaced with dashes) to return CoinMarketCap IDs for. If this option is passed, other options will be ignored.",
+											"disabled": true
+										},
+										{
+											"key": "start",
+											"value": null,
+											"description": "Optionally offset the start (1-based index) of the paginated list of items to return.",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": null,
+											"description": "Optionally specify the number of results to return. Use this parameter and the \"start\" parameter to determine your own pagination size.",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": null,
+											"description": "Valid values: \"volume_24h\", \"id\"\nWhat field to sort the list of exchanges by.",
+											"disabled": true
+										},
+										{
+											"key": "aux",
+											"value": null,
+											"description": "Default: \"first_historical_data,last_historical_data,is_active\"\nOptionally specify a comma-separated list of supplemental data fields to return. Pass first_historical_data,last_historical_data,is_active,status to include all auxiliary fields.",
+											"disabled": true
+										},
+										{
+											"key": "crypto_id",
+											"value": null,
+											"description": "Optionally include one fiat or cryptocurrency IDs to filter market pairs by. For example ?crypto_id=1 would only return exchanges that have BTC.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
 		}
 	],
 	"auth": {
