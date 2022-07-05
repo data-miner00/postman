@@ -1,0 +1,115 @@
+{
+    "info": {
+        "_postman_id": "d5a9973a-c2a3-4165-bae5-24ccb6a57719",
+        "name": "Spotify",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "9961816"
+    },
+    "item": [
+        {
+            "name": "Get Current User's Profile",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{spotify_baseUrl}}/v1/me",
+                    "host": ["{{spotify_baseUrl}}"],
+                    "path": ["v1", "me"]
+                }
+            },
+            "response": []
+        }
+    ],
+    "auth": {
+        "type": "oauth2",
+        "oauth2": [
+            {
+                "key": "useBrowser",
+                "value": false,
+                "type": "boolean"
+            },
+            {
+                "key": "scope",
+                "value": "user-read-email user-read-private",
+                "type": "string"
+            },
+            {
+                "key": "grant_type",
+                "value": "authorization_code",
+                "type": "string"
+            },
+            {
+                "key": "tokenName",
+                "value": "Spotify token",
+                "type": "string"
+            },
+            {
+                "key": "clientSecret",
+                "value": "{{spotify_clientSecret}}",
+                "type": "string"
+            },
+            {
+                "key": "clientId",
+                "value": "{{spotify_clientId}}",
+                "type": "string"
+            },
+            {
+                "key": "authUrl",
+                "value": "https://accounts.spotify.com/authorize",
+                "type": "string"
+            },
+            {
+                "key": "accessTokenUrl",
+                "value": "https://accounts.spotify.com/api/token",
+                "type": "string"
+            },
+            {
+                "key": "redirect_uri",
+                "value": "{{spotify_redirectUri}}",
+                "type": "string"
+            },
+            {
+                "key": "addTokenTo",
+                "value": "header",
+                "type": "string"
+            }
+        ]
+    },
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    "pm.request.addHeader({",
+                    "    'Content-Type': 'application/json'",
+                    "})"
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [""]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "spotify_clientId",
+            "value": "<<SPOTIFY_CLIENT_ID>>",
+            "type": "string"
+        },
+        {
+            "key": "spotify_redirectUri",
+            "value": "https://oauth.pstmn.io/v1/browser-callback",
+            "type": "string"
+        },
+        {
+            "key": "spotify_baseUrl",
+            "value": "https://api.spotify.com",
+            "type": "string"
+        }
+    ]
+}
