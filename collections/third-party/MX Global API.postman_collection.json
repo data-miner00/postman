@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "0be77fe3-eeaa-4f9a-aecb-4d9a3d46210a",
+		"name": "MX Global API",
+		"description": "API provided by MX Global. Visit the [official website](https://openapi.mx.exchange/index.html) for more info.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9961816"
+	},
+	"item": [
+		{
+			"name": "Market",
+			"item": [
+				{
+					"name": "Get Orderbooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mx_baseUrl}}/{{mx_version}}/orderbooks?pair=",
+							"host": [
+								"{{mx_baseUrl}}"
+							],
+							"path": [
+								"{{mx_version}}",
+								"orderbooks"
+							],
+							"query": [
+								{
+									"key": "pair",
+									"value": "",
+									"description": "The trading pairs of the orderbook. Available pairs (\"ETHMYR\", \"BTCMYR\")."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recent Traces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mx_baseUrl}}/{{mx_version}}/recenttrades?pair=BTCMYR",
+							"host": [
+								"{{mx_baseUrl}}"
+							],
+							"path": [
+								"{{mx_version}}",
+								"recenttrades"
+							],
+							"query": [
+								{
+									"key": "pair",
+									"value": "BTCMYR",
+									"description": "The trading pairs of the orderbook. Available pairs (\"ETHMYR\", \"BTCMYR\")."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Market Pair",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mx_baseUrl}}/{{mx_version}}/marketpair",
+							"host": [
+								"{{mx_baseUrl}}"
+							],
+							"path": [
+								"{{mx_version}}",
+								"marketpair"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "mx_baseUrl",
+			"value": "https://openapi.mx.exchange/api",
+			"type": "string"
+		},
+		{
+			"key": "mx_version",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
