@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "f024dedd-d318-4dff-b503-2cd8328fb047",
+		"name": "Contentful API",
+		"description": "# Contentful API\n\nA read-only API to access data on a Contentful space.\n\nThe official docs can be found [here](https://www.contentful.com/developers/docs/references/content-delivery-api/#/introduction).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9961816"
+	},
+	"item": [
+		{
+			"name": "Get a space",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/spaces/{{contentful_spaceId}}?access_token={{contentful_accessToken}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"spaces",
+						"{{contentful_spaceId}}"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{contentful_accessToken}}",
+							"description": "A production Content Delivery API key"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the content models of a space",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/spaces/{{contentful_spaceId}}/environments/{{environmentId}}/content_types?access_token={{contentful_accessToken}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"spaces",
+						"{{contentful_spaceId}}",
+						"environments",
+						"{{environmentId}}",
+						"content_types"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{contentful_accessToken}}",
+							"description": "A production Content Delivery API key"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single content model",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/spaces/{{contentful_spaceId}}/environments/{{environmentId}}/content_types/:content_type_id?access_token={{contentful_accessToken}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"spaces",
+						"{{contentful_spaceId}}",
+						"environments",
+						"{{environmentId}}",
+						"content_types",
+						":content_type_id"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{contentful_accessToken}}",
+							"description": "A production Content Delivery API key"
+						}
+					],
+					"variable": [
+						{
+							"key": "content_type_id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all entries of a space",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/spaces/{{contentful_spaceId}}/environments/{{environmentId}}/entries?access_token={{contentful_accessToken}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"spaces",
+						"{{contentful_spaceId}}",
+						"environments",
+						"{{environmentId}}",
+						"entries"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{contentful_accessToken}}",
+							"description": "A production Content Delivery API key"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single entry",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/spaces/{{contentful_spaceId}}/environments/{{environmentId}}/entries/:entry_id?access_token={{contentful_accessToken}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"spaces",
+						"{{contentful_spaceId}}",
+						"environments",
+						"{{environmentId}}",
+						"entries",
+						":entry_id"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{contentful_accessToken}}",
+							"description": "A production Content Delivery API key"
+						}
+					],
+					"variable": [
+						{
+							"key": "entry_id",
+							"value": "",
+							"description": "Alphanumeric id of the entry to retrieve"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all assets of a space",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/spaces/{{contentful_spaceId}}/environments/{{environmentId}}/assets?access_token={{contentful_accessToken}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"spaces",
+						"{{contentful_spaceId}}",
+						"environments",
+						"{{environmentId}}",
+						"assets"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{contentful_accessToken}}",
+							"description": "A production Content Delivery API key"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single asset",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/spaces/{{contentful_spaceId}}/environments/{{environmentId}}/assets/:asset_id?access_token={{contentful_accessToken}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"spaces",
+						"{{contentful_spaceId}}",
+						"environments",
+						"{{environmentId}}",
+						"assets",
+						":asset_id"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{contentful_accessToken}}",
+							"description": "A production Content Delivery API key"
+						}
+					],
+					"variable": [
+						{
+							"key": "asset_id",
+							"value": null,
+							"description": "Alphanumeric id of the asset to retrieve"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all tags",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{contentful_accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/spaces/{{contentful_spaceId}}/environments/{{environmentId}}/tags",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"spaces",
+						"{{contentful_spaceId}}",
+						"environments",
+						"{{environmentId}}",
+						"tags"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single tag",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{contentful_accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/spaces/{{contentful_spaceId}}/environments/{{environmentId}}/tags/:tag_id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"spaces",
+						"{{contentful_spaceId}}",
+						"environments",
+						"{{environmentId}}",
+						"tags",
+						":tag_id"
+					],
+					"variable": [
+						{
+							"key": "tag_id",
+							"value": null,
+							"description": "ID of the tag in form of a string"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve entries or assets that match a specific set of tag values",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/spaces/{{contentful_spaceId}}/environments/{{environmentId}}/entries?access_token={{contentful_accessToken}}&key=value",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"spaces",
+						"{{contentful_spaceId}}",
+						"environments",
+						"{{environmentId}}",
+						"entries"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{contentful_accessToken}}",
+							"description": "A production Content Delivery API key."
+						},
+						{
+							"key": "key",
+							"value": "value",
+							"description": "Key - Part of the query parameter to search on, e.g. `metadata.tags.sys.id[all]`; Value - The value to match, e.g. `tagA, tagB`"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://cdn.contentful.com",
+			"type": "string"
+		},
+		{
+			"key": "environmentId",
+			"value": "master",
+			"type": "string"
+		}
+	]
+}
