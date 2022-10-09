@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "8d41fec1-6798-4093-856f-460d5f1aaa4f",
+		"name": "Blog Cheers API",
+		"description": "The API routes for my personal Next.js blog. Mostly deals with cheers of article.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9961816"
+	},
+	"item": [
+		{
+			"name": "Get all articles info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{blog_baseUrl}}/api/cheers",
+					"host": [
+						"{{blog_baseUrl}}"
+					],
+					"path": [
+						"api",
+						"cheers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Increment cheers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{blog_baseUrl}}/api/cheers/:articleId",
+					"host": [
+						"{{blog_baseUrl}}"
+					],
+					"path": [
+						"api",
+						"cheers",
+						":articleId"
+					],
+					"variable": [
+						{
+							"key": "articleId",
+							"value": "abcd",
+							"description": "The article ID of the record to be incremented"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get cheers of an article",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{blog_baseUrl}}/api/cheers/:articleId",
+					"host": [
+						"{{blog_baseUrl}}"
+					],
+					"path": [
+						"api",
+						"cheers",
+						":articleId"
+					],
+					"variable": [
+						{
+							"key": "articleId",
+							"value": "abcd",
+							"description": "The article ID of the record"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
