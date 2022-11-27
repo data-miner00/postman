@@ -8,1026 +8,1704 @@
 	},
 	"item": [
 		{
-			"name": "Accounts",
+			"name": "Indexer v2.14.1",
 			"item": [
 				{
-					"name": "Get Accounts",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts",
-							"host": [
-								"{{purestake-testnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								"accounts"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "10",
-									"description": "The limit for the results.",
-									"disabled": true
-								},
-								{
-									"key": "asset-id",
-									"value": null,
-									"description": "The asset ID.",
-									"disabled": true
-								},
-								{
-									"key": "auth-addr",
-									"value": null,
-									"description": "The auth address.",
-									"disabled": true
-								},
-								{
-									"key": "currency-less-than",
-									"value": null,
-									"description": "Gets accounts that have the currency less than the specified amount.",
-									"disabled": true
-								},
-								{
-									"key": "include-all",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "application-id",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "round",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "exclude",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "next",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "currency-greater-than",
-									"value": null,
-									"description": "Gets accounts that have the currency more than the specified amount.",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Account Details",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-mainnet-baseUrl}}/idx2/v2/accounts/:accountId",
-							"host": [
-								"{{purestake-mainnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								"accounts",
-								":accountId"
-							],
-							"query": [
-								{
-									"key": "round",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "include-all",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "exclude",
-									"value": null,
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "accountId",
-									"value": null,
-									"description": "The unique address of the account."
-								}
-							]
-						},
-						"description": "Gets the details for an account by its unique address."
-					},
-					"response": []
-				},
-				{
-					"name": "Get Account App Local State",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts/:accountId/apps-local-state",
-							"host": [
-								"{{purestake-testnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								"accounts",
-								":accountId",
-								"apps-local-state"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "application-id",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "include-all",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "next",
-									"value": null,
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "accountId",
-									"value": null,
-									"description": "The unique address of the account."
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Account Assets",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts/:accountId/assets",
-							"host": [
-								"{{purestake-testnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								"accounts",
-								":accountId",
-								"assets"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "include-all",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "asset-id",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "next",
-									"value": null,
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "accountId",
-									"value": null,
-									"description": "The unique address of the account."
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Account Created Applications",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts/:accountId/created-applications",
-							"host": [
-								"{{purestake-testnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								"accounts",
-								":accountId",
-								"created-applications"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "application-id",
-									"value": null,
-									"description": "The ID of the created application by the account.",
-									"disabled": true
-								},
-								{
-									"key": "include-all",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "next",
-									"value": null,
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "accountId",
-									"value": null,
-									"description": "The unique address of the account."
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Account Created Assets",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts/:accountId/created-assets",
-							"host": [
-								"{{purestake-testnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								"accounts",
-								":accountId",
-								"created-assets"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "include-all",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "asset-id",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "next",
-									"value": null,
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "accountId",
-									"value": null,
-									"description": "The unique address of the account."
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Account Transactions",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/accounts/:accountId/transactions",
-							"host": [
-								"{{purestake-testnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								"accounts",
-								":accountId",
-								"transactions"
-							],
-							"query": [
-								{
-									"key": "sig-type",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "note-prefix",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "round",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "txid",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "tx-type",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "currency-greater-than",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "limit",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "min-round",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "asset-id",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "max-round",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "rekey-to",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "before-time",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "currency-less-than",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "after-time",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "next",
-									"value": null,
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "accountId",
-									"value": null,
-									"description": "The unique address of the account."
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Applications",
-			"item": [
-				{
-					"name": "Get Applications",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/applications",
-							"host": [
-								"{{purestake-testnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								"applications"
-							],
-							"query": [
-								{
-									"key": "creator",
-									"value": null,
-									"description": "The creator of the application.",
-									"disabled": true
-								},
-								{
-									"key": "limit",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "application-id",
-									"value": null,
-									"description": "The ID of the application.",
-									"disabled": true
-								},
-								{
-									"key": "include-all",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "next",
-									"value": null,
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Application Details",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/applications/:application-id",
-							"host": [
-								"{{purestake-testnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								"applications",
-								":application-id"
-							],
-							"variable": [
-								{
-									"key": "application-id",
-									"value": null,
-									"description": "The application ID."
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Application Logs",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/:application-id/logs",
-							"host": [
-								"{{purestake-testnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								":application-id",
-								"logs"
-							],
-							"variable": [
-								{
-									"key": "application-id",
-									"value": null,
-									"description": "The application ID."
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Assets",
-			"item": [
-				{
-					"name": "Get Assets",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/assets",
-							"host": [
-								"{{purestake-testnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								"assets"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "asset-id",
-									"value": null,
-									"description": "The asset ID.",
-									"disabled": true
-								},
-								{
-									"key": "name",
-									"value": null,
-									"description": "The name of the asset.",
-									"disabled": true
-								},
-								{
-									"key": "unit",
-									"value": null,
-									"description": "The unit of the asset.",
-									"disabled": true
-								},
-								{
-									"key": "creator",
-									"value": null,
-									"description": "The creator address of the asset.",
-									"disabled": true
-								},
-								{
-									"key": "include-all",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "next",
-									"value": null,
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Asset Details",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/assets/:asset-id",
-							"host": [
-								"{{purestake-testnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								"assets",
-								":asset-id"
-							],
-							"query": [
-								{
-									"key": "include-all",
-									"value": null,
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "asset-id",
-									"value": "93585067",
-									"description": "The asset ID."
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Asset Balances",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/assets/:asset-id/balances",
-							"host": [
-								"{{purestake-testnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								"assets",
-								":asset-id",
-								"balances"
-							],
-							"query": [
-								{
-									"key": "currency-less-than",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "limit",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "include-all",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "next",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "currency-greater-than",
-									"value": null,
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "asset-id",
-									"value": "93585067",
-									"description": "The asset ID."
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Asset Transactions",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/assets/:asset-id/transactions",
-							"host": [
-								"{{purestake-testnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								"assets",
-								":asset-id",
-								"transactions"
-							],
-							"query": [
-								{
-									"key": "sig-type",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "address",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "note-prefix",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "round",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "txid",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "tx-type",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "currency-greater-than",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "address-role",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "limit",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "min-round",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "exclude-close-to",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "max-round",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "rekey-to",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "before-time",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "currency-less-than",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "after-time",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "next",
-									"value": null,
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "asset-id",
-									"value": null,
-									"description": "The asset ID."
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Transactions",
-			"item": [
-				{
-					"name": "Get Transactions",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/transactions",
-							"host": [
-								"{{purestake-testnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								"transactions"
-							],
-							"query": [
-								{
-									"key": "sig-type",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "address",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "note-prefix",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "round",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "application-id",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "txid",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "tx-type",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "currency-greater-than",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "address-role",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "limit",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "min-round",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "asset-id",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "exclude-close-to",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "max-round",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "rekey-to",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "before-time",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "currency-less-than",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "after-time",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "next",
-									"value": null,
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Transaction Details",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/transactions/:txid",
-							"host": [
-								"{{purestake-testnet-baseUrl}}"
-							],
-							"path": [
-								"idx2",
-								"v2",
-								"transactions",
-								":txid"
-							],
-							"variable": [
-								{
-									"key": "txid",
-									"value": null,
-									"description": "The transaction ID."
-								}
-							]
-						},
-						"description": "Gets a transaction details by ID on the Algorand network. Replace the `txid`with the actual ID.\n\nSample txid: OQRFBMMFQU5O5DFFPF7GV3FZ26EUYBQMQMDO7JFQEWNNKUJBQI4A"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Check for Health",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{purestake-testnet-baseUrl}}/idx2/health",
-					"host": [
-						"{{purestake-testnet-baseUrl}}"
-					],
-					"path": [
-						"idx2",
-						"health"
-					]
-				},
-				"description": "Check for Algod health."
-			},
-			"response": []
-		},
-		{
-			"name": "Get Swagger Documentation",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{purestake-testnet-baseUrl}}/idx2/swagger.json",
-					"host": [
-						"{{purestake-testnet-baseUrl}}"
-					],
-					"path": [
-						"idx2",
-						"swagger.json"
-					]
-				},
-				"description": "Retrieves all the endpoint informations that Purestake offers for Algorand."
-			},
-			"response": []
-		},
-		{
-			"name": "Get Block",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{purestake-testnet-baseUrl}}/idx2/v2/blocks/:round-number",
-					"host": [
-						"{{purestake-testnet-baseUrl}}"
-					],
-					"path": [
-						"idx2",
-						"v2",
-						"blocks",
-						":round-number"
-					],
-					"variable": [
+					"name": "Accounts",
+					"item": [
 						{
-							"key": "round-number",
-							"value": "123456",
-							"description": "The round number of the block."
+							"name": "Get Accounts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/accounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "The limit for the results.",
+											"disabled": true
+										},
+										{
+											"key": "asset-id",
+											"value": null,
+											"description": "The asset ID.",
+											"disabled": true
+										},
+										{
+											"key": "auth-addr",
+											"value": null,
+											"description": "The auth address.",
+											"disabled": true
+										},
+										{
+											"key": "currency-less-than",
+											"value": null,
+											"description": "Gets accounts that have the currency less than the specified amount.",
+											"disabled": true
+										},
+										{
+											"key": "include-all",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "application-id",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "round",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "exclude",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "next",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "currency-greater-than",
+											"value": null,
+											"description": "Gets accounts that have the currency more than the specified amount.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Account Details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/accounts/:accountId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"accounts",
+										":accountId"
+									],
+									"query": [
+										{
+											"key": "round",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "include-all",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "exclude",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": null,
+											"description": "The unique address of the account."
+										}
+									]
+								},
+								"description": "Gets the details for an account by its unique address."
+							},
+							"response": []
+						},
+						{
+							"name": "Get Account App Local State",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/accounts/:accountId/apps-local-state",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"accounts",
+										":accountId",
+										"apps-local-state"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "application-id",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "include-all",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "next",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": null,
+											"description": "The unique address of the account."
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Account Assets",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/accounts/:accountId/assets",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"accounts",
+										":accountId",
+										"assets"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "include-all",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "asset-id",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "next",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": null,
+											"description": "The unique address of the account."
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Account Created Applications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/accounts/:accountId/created-applications",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"accounts",
+										":accountId",
+										"created-applications"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "application-id",
+											"value": null,
+											"description": "The ID of the created application by the account.",
+											"disabled": true
+										},
+										{
+											"key": "include-all",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "next",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": null,
+											"description": "The unique address of the account."
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Account Created Assets",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/accounts/:accountId/created-assets",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"accounts",
+										":accountId",
+										"created-assets"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "include-all",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "asset-id",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "next",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": null,
+											"description": "The unique address of the account."
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Account Transactions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/accounts/:accountId/transactions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"accounts",
+										":accountId",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "sig-type",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "note-prefix",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "round",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "txid",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "tx-type",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "currency-greater-than",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "min-round",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "asset-id",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "max-round",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "rekey-to",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "before-time",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "currency-less-than",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "after-time",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "next",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": null,
+											"description": "The unique address of the account."
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
+				},
+				{
+					"name": "Applications",
+					"item": [
+						{
+							"name": "Get Applications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/applications",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"applications"
+									],
+									"query": [
+										{
+											"key": "creator",
+											"value": null,
+											"description": "The creator of the application.",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "application-id",
+											"value": null,
+											"description": "The ID of the application.",
+											"disabled": true
+										},
+										{
+											"key": "include-all",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "next",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Application Details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/applications/:application-id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"applications",
+										":application-id"
+									],
+									"variable": [
+										{
+											"key": "application-id",
+											"value": null,
+											"description": "The application ID."
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Application Logs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/:application-id/logs",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										":application-id",
+										"logs"
+									],
+									"variable": [
+										{
+											"key": "application-id",
+											"value": null,
+											"description": "The application ID."
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Assets",
+					"item": [
+						{
+							"name": "Get Assets",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/assets",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"assets"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "asset-id",
+											"value": null,
+											"description": "The asset ID.",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": null,
+											"description": "The name of the asset.",
+											"disabled": true
+										},
+										{
+											"key": "unit",
+											"value": null,
+											"description": "The unit of the asset.",
+											"disabled": true
+										},
+										{
+											"key": "creator",
+											"value": null,
+											"description": "The creator address of the asset.",
+											"disabled": true
+										},
+										{
+											"key": "include-all",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "next",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Asset Details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/assets/:asset-id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"assets",
+										":asset-id"
+									],
+									"query": [
+										{
+											"key": "include-all",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "asset-id",
+											"value": "93585067",
+											"description": "The asset ID."
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Asset Balances",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/assets/:asset-id/balances",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"assets",
+										":asset-id",
+										"balances"
+									],
+									"query": [
+										{
+											"key": "currency-less-than",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "include-all",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "next",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "currency-greater-than",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "asset-id",
+											"value": "93585067",
+											"description": "The asset ID."
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Asset Transactions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/assets/:asset-id/transactions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"assets",
+										":asset-id",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "sig-type",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "address",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "note-prefix",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "round",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "txid",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "tx-type",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "currency-greater-than",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "address-role",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "min-round",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "exclude-close-to",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "max-round",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "rekey-to",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "before-time",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "currency-less-than",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "after-time",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "next",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "asset-id",
+											"value": null,
+											"description": "The asset ID."
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Transactions",
+					"item": [
+						{
+							"name": "Get Transactions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/transactions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "sig-type",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "address",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "note-prefix",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "round",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "application-id",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "txid",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "tx-type",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "currency-greater-than",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "address-role",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "min-round",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "asset-id",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "exclude-close-to",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "max-round",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "rekey-to",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "before-time",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "currency-less-than",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "after-time",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "next",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Transaction Details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/transactions/:txid",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"transactions",
+										":txid"
+									],
+									"variable": [
+										{
+											"key": "txid",
+											"value": null,
+											"description": "The transaction ID."
+										}
+									]
+								},
+								"description": "Gets a transaction details by ID on the Algorand network. Replace the `txid`with the actual ID.\n\nSample txid: OQRFBMMFQU5O5DFFPF7GV3FZ26EUYBQMQMDO7JFQEWNNKUJBQI4A"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Check for Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/health",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"health"
+							]
+						},
+						"description": "Check for Algod health."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Swagger Documentation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/swagger.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"swagger.json"
+							]
+						},
+						"description": "Retrieves all the endpoint informations that Purestake offers for Algorand."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Block",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/v2/blocks/:round-number",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v2",
+								"blocks",
+								":round-number"
+							],
+							"variable": [
+								{
+									"key": "round-number",
+									"value": "123456",
+									"description": "The round number of the block."
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"description": "Algorand Indexer, baseUrl has a preceding path `/idx2`.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"const currentUrl = pm.collectionVariables.get(\"baseUrl\");",
+							"const composedUrl = `${pm.collectionVariables.get(\"selectedUrl\")}/idx2`;",
+							"",
+							"if (currentUrl !== composedUrl) {",
+							"    pm.collectionVariables.set(\"baseUrl\", composedUrl);",
+							"}",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Algod v3.14.1",
+			"item": [
+				{
+					"name": "Accounts",
+					"item": [
+						{
+							"name": "Get Account Details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/accounts/:accountId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"accounts",
+										":accountId"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": null,
+											"description": "The public key of the account"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Account Application",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/accounts/:accountId/applications/:applicationId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"accounts",
+										":accountId",
+										"applications",
+										":applicationId"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": null,
+											"description": "The public key of the account"
+										},
+										{
+											"key": "applicationId",
+											"value": null,
+											"description": "The ID of the application"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Account Asset",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/accounts/:accountId/assets/:assetId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"accounts",
+										":accountId",
+										"assets",
+										":assetId"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": null,
+											"description": "The public key of the account"
+										},
+										{
+											"key": "assetId",
+											"value": null,
+											"description": "The ID of the asset"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Pending Transactions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/accounts/:accountId/transactions/pending",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"accounts",
+										":accountId",
+										"transactions",
+										"pending"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": null,
+											"description": "The public key of the account"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Applications",
+					"item": [
+						{
+							"name": "Get Application",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/applications/:application-id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"applications",
+										":application-id"
+									],
+									"variable": [
+										{
+											"key": "application-id",
+											"value": null,
+											"description": "The ID of the application"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Assets",
+					"item": [
+						{
+							"name": "Get Asset",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/assets/:asset-id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"assets",
+										":asset-id"
+									],
+									"variable": [
+										{
+											"key": "asset-id",
+											"value": null,
+											"description": "The ID of the asset"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Blocks",
+					"item": [
+						{
+							"name": "Get Block",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/blocks/:round-number",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"blocks",
+										":round-number"
+									],
+									"variable": [
+										{
+											"key": "round-number",
+											"value": null,
+											"description": "The round number of the block."
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Proof for Transaction in Block",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/blocks/:round-number/transactions/:txid/proof",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"blocks",
+										":round-number",
+										"transactions",
+										":txid",
+										"proof"
+									],
+									"variable": [
+										{
+											"key": "round-number",
+											"value": null,
+											"description": "The round number of the block."
+										},
+										{
+											"key": "txid",
+											"value": null,
+											"description": "The ID of the transaction."
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Ledger",
+					"item": [
+						{
+							"name": "Get Ledger Supply",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/ledger/supply",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"ledger",
+										"supply"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Status",
+					"item": [
+						{
+							"name": "Get Status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/status",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Status for Block After",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/wait-for-block-after/:round-number",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"wait-for-block-after",
+										":round-number"
+									],
+									"variable": [
+										{
+											"key": "round-number",
+											"value": null,
+											"description": "The round number of the block."
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Teal",
+					"item": [
+						{
+							"name": "Compile to Teal Code",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "MODEL1d479b",
+											"value": "",
+											"description": "Binary code of program?",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v2/teal/compile",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"teal",
+										"compile"
+									],
+									"query": [
+										{
+											"key": "sourcemap",
+											"value": "",
+											"description": "Get sourcemap?",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Disassemble Teal",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "MODELf7451e",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v2/teal/disassemble",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"teal",
+										"disassemble"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Dry Run Request",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"sources\": [\r\n    {\r\n      \"field-name\": \"string\",\r\n      \"app-index\": 0,\r\n      \"source\": \"string\",\r\n      \"txn-index\": 0\r\n    }\r\n  ],\r\n  \"round\": 0,\r\n  \"accounts\": [\r\n    {\r\n      \"participation\": {\r\n        \"state-proof-key\": \"string\",\r\n        \"vote-participation-key\": \"string\",\r\n        \"vote-last-valid\": 0,\r\n        \"vote-key-dilution\": 0,\r\n        \"vote-first-valid\": 0,\r\n        \"selection-participation-key\": \"string\"\r\n      },\r\n      \"amount\": 0,\r\n      \"address\": \"string\",\r\n      \"min-balance\": 0,\r\n      \"apps-local-state\": [\r\n        {\r\n          \"schema\": {\r\n            \"num-uint\": 0,\r\n            \"num-byte-slice\": 0\r\n          },\r\n          \"key-value\": [\r\n            {\r\n              \"value\": {\r\n                \"bytes\": \"string\",\r\n                \"type\": 0,\r\n                \"uint\": 0\r\n              },\r\n              \"key\": \"string\"\r\n            }\r\n          ],\r\n          \"id\": 0\r\n        }\r\n      ],\r\n      \"created-assets\": [\r\n        {\r\n          \"index\": 0,\r\n          \"params\": {\r\n            \"creator\": \"string\",\r\n            \"unit-name\": \"string\",\r\n            \"manager\": \"string\",\r\n            \"metadata-hash\": \"string\",\r\n            \"url-b64\": \"string\",\r\n            \"url\": \"string\",\r\n            \"clawback\": \"string\",\r\n            \"default-frozen\": true,\r\n            \"unit-name-b64\": \"string\",\r\n            \"total\": 0,\r\n            \"freeze\": \"string\",\r\n            \"decimals\": 19,\r\n            \"name\": \"string\",\r\n            \"reserve\": \"string\",\r\n            \"name-b64\": \"string\"\r\n          }\r\n        }\r\n      ],\r\n      \"apps-total-schema\": {\r\n        \"num-uint\": 0,\r\n        \"num-byte-slice\": 0\r\n      },\r\n      \"reward-base\": 0,\r\n      \"pending-rewards\": 0,\r\n      \"created-apps\": [\r\n        {\r\n          \"id\": 0,\r\n          \"params\": {\r\n            \"global-state\": [\r\n              {\r\n                \"value\": {\r\n                  \"bytes\": \"string\",\r\n                  \"type\": 0,\r\n                  \"uint\": 0\r\n                },\r\n                \"key\": \"string\"\r\n              }\r\n            ],\r\n            \"clear-state-program\": \"string\",\r\n            \"creator\": \"string\",\r\n            \"local-state-schema\": {\r\n              \"num-uint\": 0,\r\n              \"num-byte-slice\": 0\r\n            },\r\n            \"approval-program\": \"string\",\r\n            \"extra-program-pages\": 0,\r\n            \"global-state-schema\": {\r\n              \"num-uint\": 0,\r\n              \"num-byte-slice\": 0\r\n            }\r\n          }\r\n        }\r\n      ],\r\n      \"total-assets-opted-in\": 0,\r\n      \"total-apps-opted-in\": 0,\r\n      \"total-created-apps\": 0,\r\n      \"assets\": [\r\n        {\r\n          \"amount\": 0,\r\n          \"asset-id\": 0,\r\n          \"is-frozen\": true\r\n        }\r\n      ],\r\n      \"apps-total-extra-pages\": 0,\r\n      \"round\": 0,\r\n      \"total-created-assets\": 0,\r\n      \"amount-without-pending-rewards\": 0,\r\n      \"auth-addr\": \"string\",\r\n      \"rewards\": 0,\r\n      \"status\": \"string\",\r\n      \"sig-type\": \"sig\"\r\n    }\r\n  ],\r\n  \"protocol-version\": \"string\",\r\n  \"latest-timestamp\": 0,\r\n  \"txns\": [\r\n    \"string\"\r\n  ],\r\n  \"apps\": [\r\n    {\r\n      \"id\": 0,\r\n      \"params\": {\r\n        \"global-state\": [\r\n          {\r\n            \"value\": {\r\n              \"bytes\": \"string\",\r\n              \"type\": 0,\r\n              \"uint\": 0\r\n            },\r\n            \"key\": \"string\"\r\n          }\r\n        ],\r\n        \"clear-state-program\": \"string\",\r\n        \"creator\": \"string\",\r\n        \"local-state-schema\": {\r\n          \"num-uint\": 0,\r\n          \"num-byte-slice\": 0\r\n        },\r\n        \"approval-program\": \"string\",\r\n        \"extra-program-pages\": 0,\r\n        \"global-state-schema\": {\r\n          \"num-uint\": 0,\r\n          \"num-byte-slice\": 0\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v2/teal/dryrun",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"teal",
+										"dryrun"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Transactions",
+					"item": [
+						{
+							"name": "Check for Transaction",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v2/transactions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"transactions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Transactions Params",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/transactions/params",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"transactions",
+										"params"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Pending Transactions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/transactions/pending",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"transactions",
+										"pending"
+									],
+									"query": [
+										{
+											"key": "max",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "format",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Pending Transaction",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v2/transactions/pending/:txid",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v2",
+										"transactions",
+										"pending",
+										":txid"
+									],
+									"query": [
+										{
+											"key": "format",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "txid",
+											"value": null,
+											"description": "The ID of the transaction"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Genesis Block",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/genesis",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"genesis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check for Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/health",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Swagger Documentation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/swagger.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"swagger.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Versions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/versions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"versions"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Algorand daemon, baseUrl has preceding path `/ps2`.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"const currentUrl = pm.collectionVariables.get(\"baseUrl\");",
+							"const composedUrl = `${pm.collectionVariables.get(\"selectedUrl\")}/ps2`;",
+							"",
+							"if (currentUrl !== composedUrl) {",
+							"    pm.collectionVariables.set(\"baseUrl\", composedUrl);",
+							"}",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		}
 	],
 	"auth": {
@@ -1082,8 +1760,18 @@
 			"type": "string"
 		},
 		{
-			"key": "purestake_betanet-baseUrl",
+			"key": "purestake-betanet-baseUrl",
 			"value": "https://betanet-algorand.api.purestake.io",
+			"type": "string"
+		},
+		{
+			"key": "selectedUrl",
+			"value": "https://testnet-algorand.api.purestake.io",
+			"type": "string"
+		},
+		{
+			"key": "baseUrl",
+			"value": "",
 			"type": "string"
 		}
 	]
