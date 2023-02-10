@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "d007c44c-b1d4-4125-9ef6-efba1dfb917b",
+		"name": "Exchange Rate API",
+		"description": "API specifically made for getting exchange rates for fiat currencies. [Learn more](https://app.exchangerate-api.com/sign-in).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9961816"
+	},
+	"item": [
+		{
+			"name": "Get all exchange rate for a specified currency",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{exchange_rate_apiKey}}/latest/:code",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{exchange_rate_apiKey}}",
+						"latest",
+						":code"
+					],
+					"variable": [
+						{
+							"key": "code",
+							"value": "AUD",
+							"description": "The currency code to retrieve."
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get API quota",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{exchange_rate_apiKey}}/quota",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{exchange_rate_apiKey}}",
+						"quota"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get supported currency codes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{exchange_rate_apiKey}}/codes",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{exchange_rate_apiKey}}",
+						"codes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get paired exchange rate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{exchange_rate_apiKey}}/pair/:from/:to",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{exchange_rate_apiKey}}",
+						"pair",
+						":from",
+						":to"
+					],
+					"variable": [
+						{
+							"key": "from",
+							"value": "MYR",
+							"description": "The currency code to convert from."
+						},
+						{
+							"key": "to",
+							"value": "SGD",
+							"description": "The currency code to convert to."
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://v6.exchangerate-api.com/v6/",
+			"type": "string"
+		}
+	]
+}
