@@ -2,11 +2,150 @@
 	"info": {
 		"_postman_id": "63014949-a891-464b-a429-b79934c21c2d",
 		"name": "Hackernews API",
-		"description": "The collection for the official [Hackernews API](https://hackernews.api-docs.io/v0/overview/introduction). Contains a total of 8 requests that is allowed to fetch. No authentication is required.",
+		"description": "The collection for the official [Hackernews API](https://hackernews.api-docs.io/v0/overview/introduction). Contains a total of 8 requests that is allowed to fetch. No authentication is required.\n\nAnother possible endpoint are provided by Algolia that includes search functionality. Refer to [Algolia Hackernews API](https://hn.algolia.com/api).",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "9961816"
 	},
 	"item": [
+		{
+			"name": "Algolia",
+			"item": [
+				{
+					"name": "Items (Algolia)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{algolia-hn-baseUrl}}/items/:id",
+							"host": [
+								"{{algolia-hn-baseUrl}}"
+							],
+							"path": [
+								"items",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "The id for the item."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by ID (Algolia)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{algolia-hn-baseUrl}}/users/:username",
+							"host": [
+								"{{algolia-hn-baseUrl}}"
+							],
+							"path": [
+								"users",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "pg",
+									"description": "The user's username."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search (Unsorted)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{algolia-hn-baseUrl}}/search?query=Pynecone",
+							"host": [
+								"{{algolia-hn-baseUrl}}"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "Pynecone",
+									"description": "The full-text query"
+								},
+								{
+									"key": "tags",
+									"value": null,
+									"description": "The tags of the item. Can be `story`, `comment`, `poll`, `pollopt`, `show_hn`, `ask_hn`, `front_page`, `author_:USERNAME` or `story_:ID`",
+									"disabled": true
+								},
+								{
+									"key": "numericFilters",
+									"value": null,
+									"description": "Filter based on the input condition (`<`, `<=`, `=`, `>` or `>=`).\n\nNumeric fields available for comparison are `created_at_i`, `points` and `num_comments`",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": null,
+									"description": "The page number of the search result.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search (Sort By Date)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{algolia-hn-baseUrl}}/search_by_date?query=Hasura",
+							"host": [
+								"{{algolia-hn-baseUrl}}"
+							],
+							"path": [
+								"search_by_date"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "Hasura",
+									"description": "The full-text query"
+								},
+								{
+									"key": "tags",
+									"value": "",
+									"description": "The tags of the item. Can be `story`, `comment`, `poll`, `pollopt`, `show_hn`, `ask_hn`, `front_page`, `author_:USERNAME` or `story_:ID`",
+									"disabled": true
+								},
+								{
+									"key": "numericFilters",
+									"value": "",
+									"description": "Filter based on the input condition (`<`, `<=`, `=`, `>` or `>=`).\n\nNumeric fields available for comparison are `created_at_i`, `points` and `num_comments`",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "",
+									"description": "The page number of the search result.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
 		{
 			"name": "Items",
 			"request": {
@@ -187,6 +326,11 @@
 		{
 			"key": "user-id",
 			"value": "<<user-id>>"
+		},
+		{
+			"key": "algolia-hn-baseUrl",
+			"value": "http://hn.algolia.com/api/v1",
+			"type": "string"
 		}
 	]
 }
