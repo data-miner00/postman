@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "d80683d6-76c8-41b9-837b-edd0423aabc9",
+		"name": "Open AI API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9961816"
+	},
+	"item": [
+		{
+			"name": "Get model info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "OpenAI-Organization",
+						"value": "{{openai_orgId}}",
+						"description": "The organization ID for the API token.",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{openai_baseUrl}}/models",
+					"host": [
+						"{{openai_baseUrl}}"
+					],
+					"path": [
+						"models"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chat completion",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "OpenAI-Organization",
+						"value": "{{openai_orgId}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"model\": \"text-davinci-003\",\r\n  \"prompt\": \"Elbert Ainstein was a\",\r\n  \"max_tokens\": 20,\r\n  \"temperature\": 0.3,\r\n  \"top_p\": 1,\r\n  \"n\": 1,\r\n  \"stream\": false,\r\n  \"logprobs\": null,\r\n  \"stop\": \"\\n\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{openai_baseUrl}}/completions",
+					"host": [
+						"{{openai_baseUrl}}"
+					],
+					"path": [
+						"completions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chat completion 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"model\": \"gpt-3.5-turbo\",\r\n  \"messages\": [{\"role\": \"user\", \"content\": \"Write a Hello World program in Gleam\"}]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{openai_baseUrl}}/chat/completions",
+					"host": [
+						"{{openai_baseUrl}}"
+					],
+					"path": [
+						"chat",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Image",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"prompt\": \"A cute baby sea otter\",\r\n  \"n\": 2,\r\n  \"size\": \"1024x1024\"\r\n}"
+				},
+				"url": {
+					"raw": "{{openai_baseUrl}}/images/generations",
+					"host": [
+						"{{openai_baseUrl}}"
+					],
+					"path": [
+						"images",
+						"generations"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{openai_apiToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "openai_baseUrl",
+			"value": "https://api.openai.com/v1",
+			"type": "string"
+		}
+	]
+}
