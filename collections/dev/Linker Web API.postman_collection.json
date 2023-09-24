@@ -1,0 +1,444 @@
+{
+	"info": {
+		"_postman_id": "a0b99e25-c273-4d24-8a35-1f12b7442912",
+		"name": "Linker Web API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9961816"
+	},
+	"item": [
+		{
+			"name": "Website",
+			"item": [
+				{
+					"name": "Get all websites",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/website/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"website",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get website by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/website/:guid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"website",
+								":guid"
+							],
+							"variable": [
+								{
+									"key": "guid",
+									"value": "f0d1665e-3717-4c00-b993-22796aeeca91",
+									"description": "The unique ID of the website"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create website",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://www.youtube.com\",\r\n    \"name\": \"Youtube\",\r\n    \"category\": 5,\r\n    \"description\": \"A de-facto video streaming platform for the plebs.\",\r\n    \"tags\": [\"video\", \"education\", \"entertainment\"],\r\n    \"language\": 0,\r\n    \"aesthetics\": 3,\r\n    \"isSubdomain\": false,\r\n    \"isMultilingual\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/website",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"website"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update website",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://www.youtubes.com\",\r\n    \"name\": \"Updated Youtube\",\r\n    \"category\": 5,\r\n    \"description\": \"A de-facto video streaming platform for the plebs.\",\r\n    \"language\": 0,\r\n    \"aesthetics\": 2,\r\n    \"isSubdomain\": false,\r\n    \"isMultilingual\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/website/:guid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"website",
+								":guid"
+							],
+							"variable": [
+								{
+									"key": "guid",
+									"value": "f0d1665e-3717-4c00-b993-22796aeeca91",
+									"description": "The unique ID for an existing website to update."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete website by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/website/:guid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"website",
+								":guid"
+							],
+							"variable": [
+								{
+									"key": "guid",
+									"value": "a574e511-8bb2-4a98-b3b6-f6da50cf8616",
+									"description": "The unique ID of the website to be removed."
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "This is the folder to store website related APIs."
+		},
+		{
+			"name": "Article",
+			"item": [
+				{
+					"name": "Get all articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/article",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"article"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get article by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/article/:guid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"article",
+								":guid"
+							],
+							"variable": [
+								{
+									"key": "guid",
+									"value": "c322f3b1-7a39-4d05-b0c9-f4c8e6e3ce9k",
+									"description": "The unique ID of the article"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create article",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://disquiet.io/@mrshin/makerlog/%EC%95%B1%EC%8A%A4%ED%86%A0%EC%96%B4-1%EC%9C%84-%EB%91%90-%EB%8B%AC-%EB%A7%8C%EC%97%90-dau%EA%B0%80-10%ED%86%A0%EB%A7%89%EC%9D%B4-%EB%82%98%EB%B2%84%EB%A0%B8%EB%8B%A4\",\r\n    \"title\": \"앱스토어 1위 후 DAU가 10토막이 나버렸고 대표는 빚이 생겼다\",\r\n    \"category\": 5,\r\n    \"description\": \"이 게시글은 주식회사 언박서즈의 협찬으로 만들어졌으며, 언박서즈와 함께 천안과 미국에서 합숙하실 프론트엔드 개발자를 찾기 위해 올린 글입니다.\",\r\n    \"tags\": [\"article\", \"education\", \"entertainment\"],\r\n    \"language\": 2,\r\n    \"grammar\": 3,\r\n    \"author\": \"신희철\",\r\n    \"year\": 2023,\r\n    \"watchLater\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/article",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"article"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update article",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://disquiet.io/@mrshin/makerlog/%EC%95%B1%EC%8A%A4%ED%86%A0%EC%96%B4-1%EC%9C%84-%EB%91%90-%EB%8B%AC-%EB%A7%8C%EC%97%90-dau%EA%B0%80-10%ED%86%A0%EB%A7%89%EC%9D%B4-%EB%82%98%EB%B2%84%EB%A0%B8%EB%8B%A4\",\r\n    \"title\": \"앱스토어 1위 후 DAU가 10토막이 나버렸고 대표는 빚이 생겼다\",\r\n    \"category\": 3,\r\n    \"description\": \"이 게시글은 주식회사 언박서즈의 협찬으로 만들어졌으며, 언박서즈와 함께 천안과 미국에서 합숙하실 프론트엔드 개발자를 찾기 위해 올린 글입니다.\",\r\n    \"language\": 1,\r\n    \"grammar\": 2,\r\n    \"author\": \"신희철\",\r\n    \"year\": 2023,\r\n    \"watchLater\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/article/:guid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"article",
+								":guid"
+							],
+							"variable": [
+								{
+									"key": "guid",
+									"value": "c322f3b1-7a39-4d05-b0c9-f4c8e6e3ce9k",
+									"description": "The unique ID of the article"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete article by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/article/:guid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"article",
+								":guid"
+							],
+							"variable": [
+								{
+									"key": "guid",
+									"value": "",
+									"description": "The unique ID of the article"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "This is the folder to store article related APIs."
+		},
+		{
+			"name": "Youtube",
+			"item": [
+				{
+					"name": "Get all channels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/youtube",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"youtube"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get channel by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/youtube/:guid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"youtube",
+								":guid"
+							],
+							"variable": [
+								{
+									"key": "guid",
+									"value": "ae58d402-b7a4-4e69-97d6-30ebcad741c5",
+									"description": "The unique ID of the channel"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create channel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://www.youtube.com/@freecodecamp\",\r\n    \"category\": 5,\r\n    \"description\": \"A very nice channel that offers latest tech for free.\",\r\n    \"tags\": [\"open source\", \"education\", \"entertainment\"],\r\n    \"language\": 2,\r\n    \"youtuber\": \"freeCodeCamp\",\r\n    \"country\": \"United Kingdom\",\r\n    \"name\": \"freeCodeCamp\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/youtube",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"youtube"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update channel",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://www.youtube.com/@freecodecamp\",\r\n    \"category\": 5,\r\n    \"description\": \"A very nice channel that offers latest tech for free.\",\r\n    \"language\": 2,\r\n    \"youtuber\": \"freeCodeCamp\",\r\n    \"country\": \"Sweden\",\r\n    \"name\": \"freeCodeCamp\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/youtube/:guid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"youtube",
+								":guid"
+							],
+							"variable": [
+								{
+									"key": "guid",
+									"value": "b40e9c8b-2fe7-4646-b892-ae6dad6dbc1a",
+									"description": "The unique ID of the channel"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete channel by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/youtube/:guid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"youtube",
+								":guid"
+							],
+							"variable": [
+								{
+									"key": "guid",
+									"value": "",
+									"description": "The unique ID of the channel"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "This is the folder to store youtube related APIs."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5204/api",
+			"type": "string"
+		}
+	]
+}
