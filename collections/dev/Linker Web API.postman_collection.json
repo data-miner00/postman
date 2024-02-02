@@ -44,7 +44,7 @@
 							"variable": [
 								{
 									"key": "guid",
-									"value": "f0d1665e-3717-4c00-b993-22796aeeca91",
+									"value": "53603062-ff83-41dc-924c-3ab5ea4267ad",
 									"description": "The unique ID of the website"
 								}
 							]
@@ -59,7 +59,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"url\": \"https://www.youtube.com\",\r\n    \"name\": \"Youtube\",\r\n    \"category\": 5,\r\n    \"description\": \"A de-facto video streaming platform for the plebs.\",\r\n    \"tags\": [\"video\", \"education\", \"entertainment\"],\r\n    \"language\": 0,\r\n    \"aesthetics\": 3,\r\n    \"isSubdomain\": false,\r\n    \"isMultilingual\": true\r\n}",
+							"raw": "{\r\n    \"url\": \"https://www.youtube.com\",\r\n    \"name\": \"Youtube\",\r\n    \"category\": 5,\r\n    \"description\": \"A de-facto video streaming platform for the plebs.\",\r\n    \"tags\": [\"video\", \"education\", \"entertainment\"],\r\n    \"language\": 0,\r\n    \"rating\": 0,\r\n    \"aesthetics\": 3,\r\n    \"isSubdomain\": false,\r\n    \"isMultilingual\": true,\r\n    \"createdBy\": \"76d564b6-5bdb-4377-a5ea-c18608e94e33\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -85,7 +85,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"url\": \"https://www.youtubes.com\",\r\n    \"name\": \"Updated Youtube\",\r\n    \"category\": 5,\r\n    \"description\": \"A de-facto video streaming platform for the plebs.\",\r\n    \"language\": 0,\r\n    \"aesthetics\": 2,\r\n    \"isSubdomain\": false,\r\n    \"isMultilingual\": true\r\n}",
+							"raw": "{\r\n    \"url\": \"https://www.youtubesx.com\",\r\n    \"name\": \"Updated Youtube\",\r\n    \"category\": 5,\r\n    \"description\": \"A de-facto video streaming platform for the plebs.\",\r\n    \"language\": 0,\r\n    \"rating\": 2,\r\n    \"aesthetics\": 2,\r\n    \"isSubdomain\": false,\r\n    \"isMultilingual\": true,\r\n    \"createdBy\": \"76d564b6-5bdb-4377-a5ea-c18608e94e33\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -104,7 +104,7 @@
 							"variable": [
 								{
 									"key": "guid",
-									"value": "f0d1665e-3717-4c00-b993-22796aeeca91",
+									"value": "53603062-ff83-41dc-924c-3ab5ea4267ad",
 									"description": "The unique ID for an existing website to update."
 								}
 							]
@@ -129,8 +129,66 @@
 							"variable": [
 								{
 									"key": "guid",
-									"value": "a574e511-8bb2-4a98-b3b6-f6da50cf8616",
+									"value": "9b1374fa-bef2-48f0-9533-4aa36672f240",
 									"description": "The unique ID of the website to be removed."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all websites by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/website/byuser/:userId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"website",
+								"byuser",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "76d564b6-5bdb-4377-a5ea-c18608e94e33",
+									"description": "The user Id."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get website by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/website/byuser/:userId/:linkId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"website",
+								"byuser",
+								":userId",
+								":linkId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "76d564b6-5bdb-4377-a5ea-c18608e94e33",
+									"description": "The user ID."
+								},
+								{
+									"key": "linkId",
+									"value": "4afc646c-5ecd-4321-9946-0d0e2f24c31a",
+									"description": "The link ID."
 								}
 							]
 						}
@@ -177,6 +235,31 @@
 							"variable": [
 								{
 									"key": "guid",
+									"value": "e604837c-c949-4ede-b8db-b97b3aa10384",
+									"description": "The unique ID of the article"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get article by ID and user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/article/:guid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"article",
+								":guid"
+							],
+							"variable": [
+								{
+									"key": "guid",
 									"value": "c322f3b1-7a39-4d05-b0c9-f4c8e6e3ce9a",
 									"description": "The unique ID of the article"
 								}
@@ -192,7 +275,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"url\": \"https://disquiet.io/@mrshin/makerlog/%EC%95%B1%EC%8A%A4%ED%86%A0%EC%96%B4-1%EC%9C%84-%EB%91%90-%EB%8B%AC-%EB%A7%8C%EC%97%90-dau%EA%B0%80-10%ED%86%A0%EB%A7%89%EC%9D%B4-%EB%82%98%EB%B2%84%EB%A0%B8%EB%8B%A4\",\r\n    \"title\": \"앱스토어 1위 후 DAU가 10토막이 나버렸고 대표는 빚이 생겼다\",\r\n    \"category\": 5,\r\n    \"description\": \"이 게시글은 주식회사 언박서즈의 협찬으로 만들어졌으며, 언박서즈와 함께 천안과 미국에서 합숙하실 프론트엔드 개발자를 찾기 위해 올린 글입니다.\",\r\n    \"tags\": [\"article\", \"education\", \"entertainment\"],\r\n    \"language\": 2,\r\n    \"grammar\": 3,\r\n    \"author\": \"신희철\",\r\n    \"year\": 2023,\r\n    \"watchLater\": false\r\n}",
+							"raw": "{\r\n    \"url\": \"https://disquiet.io/@mrshin/makerlog/%EC%95%B1%EC%8A%A4%ED%86%A0%EC%96%B4-1%EC%9C%84-%EB%91%90-%EB%8B%AC-%EB%A7%8C%EC%97%90-dau%EA%B0%80-10%ED%86%A0%EB%A7%89%EC%9D%B4-%EB%82%98%EB%B2%84%EB%A0%B8%EB%8B%A4\",\r\n    \"title\": \"앱스토어 1위 후 DAU가 10토막이 나버렸고 대표는 빚이 생겼다\",\r\n    \"category\": 7,\r\n    \"description\": \"이 게시글은 주식회사 언박서즈의 협찬으로 만들어졌으며, 언박서즈와 함께 천안과 미국에서 합숙하실 프론트엔드 개발자를 찾기 위해 올린 글입니다.\",\r\n    \"tags\": [\"article\", \"education\", \"entertainment\"],\r\n    \"language\": 1,\r\n    \"grammar\": 3,\r\n    \"author\": \"신희철\",\r\n    \"year\": 2023,\r\n    \"watchLater\": false,\r\n    \"createdBy\": \"76d564b6-5bdb-4377-a5ea-c18608e94e33\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -218,7 +301,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"url\": \"https://disquiet.io/@mrshin/makerlog/%EC%95%B1%EC%8A%A4%ED%86%A0%EC%96%B4-1%EC%9C%84-%EB%91%90-%EB%8B%AC-%EB%A7%8C%EC%97%90-dau%EA%B0%80-10%ED%86%A0%EB%A7%89%EC%9D%B4-%EB%82%98%EB%B2%84%EB%A0%B8%EB%8B%A4\",\r\n    \"title\": \"앱스토어 1위 후 DAU가 10토막이 나버렸고 대표는 빚이 생겼다\",\r\n    \"category\": 3,\r\n    \"description\": \"이 게시글은 주식회사 언박서즈의 협찬으로 만들어졌으며, 언박서즈와 함께 천안과 미국에서 합숙하실 프론트엔드 개발자를 찾기 위해 올린 글입니다.\",\r\n    \"language\": 1,\r\n    \"grammar\": 2,\r\n    \"author\": \"신희철\",\r\n    \"year\": 2023,\r\n    \"watchLater\": false\r\n}",
+							"raw": "{\r\n    \"url\": \"https://disquiet.io/@mrshin/makerlog/%EC%95%B1%EC%8A%A4%ED%86%A0%EC%96%B4-1%EC%9C%84-%EB%91%90-%EB%8B%AC-%EB%A7%8C%EC%97%90-dau%EA%B0%80-10%ED%86%A0%EB%A7%89%EC%9D%B4-%EB%82%98%EB%B2%84%EB%A0%B8%EB%8B%A4\",\r\n    \"title\": \"앱스토어 1위 후 DAU가 10토막이 나버렸고 대표는 빚이 생겼다\",\r\n    \"category\": 3,\r\n    \"description\": \"이 게시글은 주식회사 언박서즈의 협찬으로 만들어졌으며, 언박서즈와 함께 천안과 미국에서 합숙하실 프론트엔드 개발자를 찾기 위해 올린 글입니다.\",\r\n    \"language\": 1,\r\n    \"rating\": 3,\r\n    \"grammar\": 2,\r\n    \"author\": \"신희철\",\r\n    \"year\": 2023,\r\n    \"watchLater\": false,\r\n    \"createdBy\": \"76d564b6-5bdb-4377-a5ea-c18608e94e33\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -237,7 +320,7 @@
 							"variable": [
 								{
 									"key": "guid",
-									"value": "c322f3b1-7a39-4d05-b0c9-f4c8e6e3ce9k",
+									"value": "e604837c-c949-4ede-b8db-b97b3aa10384",
 									"description": "The unique ID of the article"
 								}
 							]
@@ -262,11 +345,19 @@
 							"variable": [
 								{
 									"key": "guid",
-									"value": "",
+									"value": "7164c703-40c1-45f3-936a-8f8b41a90a14",
 									"description": "The unique ID of the article"
 								}
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all articles by user",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
@@ -288,6 +379,32 @@
 							],
 							"path": [
 								"youtube"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all channels by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/youtube/byuser/:userId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"youtube",
+								"byuser",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "76d564b6-5bdb-4377-a5ea-c18608e94e33",
+									"description": "The user ID"
+								}
 							]
 						}
 					},
@@ -326,13 +443,50 @@
 					"response": []
 				},
 				{
+					"name": "Get channel by ID and user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/youtube/byuser/:userId/:linkId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"youtube",
+								"byuser",
+								":userId",
+								":linkId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "76d564b6-5bdb-4377-a5ea-c18608e94e33"
+								},
+								{
+									"key": "linkId",
+									"value": "6e7a612c-6585-467d-8a62-055d0ba1ac3a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Create channel",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"url\": \"https://www.youtube.com/@freecodecamp\",\r\n    \"category\": 5,\r\n    \"description\": \"A very nice channel that offers latest tech for free.\",\r\n    \"tags\": [\"open source\", \"education\", \"entertainment\"],\r\n    \"language\": 2,\r\n    \"youtuber\": \"freeCodeCamp\",\r\n    \"country\": \"United Kingdom\",\r\n    \"name\": \"freeCodeCamp\"\r\n}",
+							"raw": "{\r\n    \"url\": \"https://www.youtube.com/@freecodecamp\",\r\n    \"category\": 5,\r\n    \"description\": \"A very nice channel that offers latest tech for free.\",\r\n    \"tags\": [\"open source\", \"education\", \"entertainment\"],\r\n    \"language\": 2,\r\n    \"rating\": 0,\r\n    \"youtuber\": \"freeCodeCamp\",\r\n    \"country\": \"United Kingdom\",\r\n    \"name\": \"freeCodeCamp\",\r\n    \"createdBy\": \"76d564b6-5bdb-4377-a5ea-c18608e94e33\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -358,7 +512,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"url\": \"https://www.youtube.com/@freecodecamp\",\r\n    \"category\": 5,\r\n    \"description\": \"A very nice channel that offers latest tech for free.\",\r\n    \"language\": 2,\r\n    \"youtuber\": \"freeCodeCamp\",\r\n    \"country\": \"Sweden\",\r\n    \"name\": \"freeCodeCamp\"\r\n}",
+							"raw": "{\r\n    \"url\": \"https://www.youtube.com/@freecodecamp\",\r\n    \"category\": 3,\r\n    \"description\": \"A very nice channel that offers latest tech for free.\",\r\n    \"language\": 2,\r\n    \"youtuber\": \"freeCodeCamp\",\r\n    \"country\": \"Sweden\",\r\n    \"name\": \"freeCodeCamp\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -377,7 +531,7 @@
 							"variable": [
 								{
 									"key": "guid",
-									"value": "b40e9c8b-2fe7-4646-b892-ae6dad6dbc1a",
+									"value": "0128a05c-4450-4b88-80ca-0d85ba4a5271",
 									"description": "The unique ID of the channel"
 								}
 							]
@@ -402,7 +556,7 @@
 							"variable": [
 								{
 									"key": "guid",
-									"value": "",
+									"value": "6e7a612c-6585-467d-8a62-055d0ba1ac3a",
 									"description": "The unique ID of the channel"
 								}
 							]
@@ -604,6 +758,88 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"shaun2\",\r\n    \"password\": \"password123\",\r\n    \"dateOfBirth\": \"2006-01-01T00:00:00.0000000-00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rawUrl}}/register",
+							"host": [
+								"{{rawUrl}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"shaun2\",\r\n    \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{rawUrl}}/login",
+							"host": [
+								"{{rawUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{rawUrl}}/logout",
+							"host": [
+								"{{rawUrl}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Testing",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
@@ -630,6 +866,11 @@
 		{
 			"key": "baseUrl",
 			"value": "http://localhost:5204/api",
+			"type": "string"
+		},
+		{
+			"key": "rawUrl",
+			"value": "http://localhost:5204",
 			"type": "string"
 		}
 	]
