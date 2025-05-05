@@ -6,3 +6,6 @@ secrets.crt
 
 # Dist folder
 dist
+
+# Node
+node_modules

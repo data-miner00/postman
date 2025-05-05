@@ -1,0 +1,25 @@
+{
+  "name": "postman",
+  "version": "1.0.0",
+  "description": "My personal Postman sandbox workspace that used to deal with APIs for my development, in an organised, neat way.",
+  "scripts": {
+    "test": "newman run collections/Hoppscotch.postman_collection.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/data-miner00/postman.git"
+  },
+  "keywords": [
+    "postman",
+    "testing",
+    "sandbox"
+  ],
+  "author": "Shaun Chong <pkay_@live.com>",
+  "bugs": {
+    "url": "https://github.com/data-miner00/postman/issues"
+  },
+  "homepage": "https://github.com/data-miner00/postman#readme",
+  "devDependencies": {
+    "newman": "^6.2.1"
+  }
+}
