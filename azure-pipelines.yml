@@ -20,6 +20,6 @@ steps:
     displayName: "Install dependencies"
 
   - script: |
-      newman run collections/Hoppscotch.postman_collection.json
-      newman run "collections/JSON Placeholder.postman_collection.json" -e environments/Scratchpad.postman_environment.json
+      npx newman run collections/Hoppscotch.postman_collection.json
+      npx newman run "collections/JSON Placeholder.postman_collection.json" -e environments/Scratchpad.postman_environment.json
     displayName: "Run integration tests"
