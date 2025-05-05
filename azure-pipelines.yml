@@ -1,0 +1,23 @@
+trigger:
+  - main
+
+pool: default
+
+steps:
+  - task: CmdLine@2
+    inputs:
+      script: |
+        echo  '$(System.DefaultWorkingDirectory)'
+        dir
+    displayName: Show working directory
+
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "22.x"
+    displayName: "Install Node.js"
+
+  - script: npm install
+    displayName: "Install dependencies"
+
+  - script: npm test
+    displayName: "Run integration tests"
