@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "e7626613-a0e2-43be-81f1-8aab8820e620",
+		"name": "JSON Placeholder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9961816"
+	},
+	"item": [
+		{
+			"name": "Get Post by Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"should get the post with id 1\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(pm.response.json().id).to.eql(1);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{jsonplaceholder_baseUrl}}/posts/:id",
+					"host": [
+						"{{jsonplaceholder_baseUrl}}"
+					],
+					"path": [
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "The post Id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post By Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"should delete the post\", function () {\r",
+							"    pm.response.to.have.status(200)\r",
+							"    var content = pm.response.json();\r",
+							"    pm.expect(content).to.be.eql({});\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{jsonplaceholder_baseUrl}}/posts/:id",
+					"host": [
+						"{{jsonplaceholder_baseUrl}}"
+					],
+					"path": [
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "The post Id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('should update the post', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    var content = pm.response.json();\r",
+							"    pm.expect(content['title']).to.be.eql('foo');\r",
+							"    pm.expect(content['body']).to.be.eql('bar');\r",
+							"    pm.expect(content['userId']).to.be.eql(1);\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"foo\",\r\n    \"body\": \"bar\",\r\n    \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{jsonplaceholder_baseUrl}}/posts/:id",
+					"host": [
+						"{{jsonplaceholder_baseUrl}}"
+					],
+					"path": [
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "The post Id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"should get a list of post\", function () {\r",
+							"    pm.response.to.have.status(200)\r",
+							"    var content = pm.response.json();\r",
+							"    pm.expect(content).to.be.an('array');\r",
+							"\r",
+							"    pm.expect(content.length).to.be.eql(100);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{jsonplaceholder_baseUrl}}/posts",
+					"host": [
+						"{{jsonplaceholder_baseUrl}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patching Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"should patch the post\", function () {\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.expect(pm.response.json().title).to.eql(\"foo\")\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"foo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{jsonplaceholder_baseUrl}}/posts/:id",
+					"host": [
+						"{{jsonplaceholder_baseUrl}}"
+					],
+					"path": [
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "The post Id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"should create a post\", function () {\r",
+							"    pm.response.to.have.status(201)\r",
+							"    var content = pm.response.json();\r",
+							"    pm.expect(content['title']).to.be.eql('foo');\r",
+							"    pm.expect(content['body']).to.be.eql('bar');\r",
+							"    pm.expect(content['userId']).to.be.eql(1);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"foo\",\r\n    \"body\": \"bar\",\r\n    \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{jsonplaceholder_baseUrl}}/posts",
+					"host": [
+						"{{jsonplaceholder_baseUrl}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
