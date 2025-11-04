@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/env bash
+
+set -euo pipefail
 
 echo Secret replacement script initiated.
 read -p "Enter your password:" PASSWORD

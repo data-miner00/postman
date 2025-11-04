@@ -1,3 +1,7 @@
+#!/bin/env bash
+
+set -euo pipefail
+
 CWD=$(pwd)
 
 if [[ "$CWD" == *postman/scripts ]]
