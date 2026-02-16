@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/data-miner00/postman#readme",
   "devDependencies": {
-    "newman": "^6.2.1"
+    "newman": "^6.2.2"
   }
 }
