@@ -1,0 +1,172 @@
+{
+  "info": {
+    "_postman_id": "7a9acee5-13e2-4d1b-8d25-b62c2429b9b9",
+    "name": "Mock Api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "9961816"
+  },
+  "item": [
+    {
+      "name": "Get Book 1",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-mock-response-code",
+            "value": "500",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{url}}/book/1",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "book",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Default",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{url}}/book/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "book",
+                "1"
+              ]
+            }
+          },
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\r\n    \"title\": \"Get Book\",\r\n    \"description\": \"Retrieve a book by its ID\",\r\n    \"url\": \"{{url}}/book/1\",\r\n    \"method\": \"GET\",\r\n    \"author\": \"John Doe\"\r\n}"
+        },
+        {
+          "name": "Server Error",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{url}}/book/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "book",
+                "1"
+              ]
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "Create Book",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Get Book\",\r\n    \"description\": \"Retrieve a book by its ID\",\r\n    \"author\": \"John Doe\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/book",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "book"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Default",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Get Book\",\r\n    \"description\": \"Retrieve a book by its ID\",\r\n    \"author\": \"John Doe\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/book",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "book"
+              ]
+            }
+          },
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": ""
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "url",
+      "value": "https://df258425-f233-4162-b5e2-b6910eaaeb17.mock.pstmn.io"
+    }
+  ]
+}
